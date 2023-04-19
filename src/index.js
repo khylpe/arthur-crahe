@@ -6,6 +6,9 @@ import { ThemeProvider } from "./contexts/themeContext";
 import { SectionProvider, useSection } from "./contexts/sectionContext";
 import { LanguageProvider } from './contexts/languageContext';
 import Home from './pages/home';
+import Contact from './pages/contact';
+import About from './pages/about';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -16,9 +19,9 @@ const MainContent = ({ headerHeight }) => {
               case "home":
                      return <Home headerHeight={headerHeight}/>;
               case "about":
-              //     return <About />;
+                  return <About headerHeight={headerHeight}/>;
               case "contact":
-              //     return <Contact />;
+                  return <Contact headerHeight={headerHeight}/>;
               default:
                      return <div style={{ paddingTop: headerHeight }}>Section not found</div>;
        }

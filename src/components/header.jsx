@@ -5,33 +5,34 @@ import { withSection } from "./../contexts/sectionContext";
 import { withLanguage } from "./../contexts/languageContext";
 import { translations } from "./../translations";
 import useHover from './../hooks/useHover';
+import frenchFlag from './../img/france_icon.png'
+import UKFlag from './../img/kingdom_united_icon.png'
 
 const Header = (props) => {
        const { currentSection } = props;
        const { theme, toggleTheme } = useTheme();
        const { language, toggleLanguage } = props;
        const [isCollapsed, setIsCollapsed] = useState(true);
-
        const headerRef = useRef(null);
+       const headerRefMobile = useRef(null);
+
        const styles = useStyles();
-
-       console.log(theme)
-
        const { isHovered, handleMouseEnter, handleMouseLeave } = useHover();
 
-
        useEffect(() => {
-              if (headerRef.current) {
-                     const currentHeader = headerRef.current.classList.contains("lg:hidden") ? headerRef.current.children[0] : headerRef.current;
-                     props.setHeaderHeight(currentHeader.offsetHeight);
-                     window.addEventListener('resize', () => {
-                            props.setHeaderHeight(currentHeader.offsetHeight);
-                     });
+              const updateHeaderHeight = () => {
+                     const height1 = headerRef.current ? headerRef.current.offsetHeight : 0;
+                     const height2 = headerRefMobile.current ? headerRefMobile.current.offsetHeight : 0;
+                     props.setHeaderHeight(Math.max(height1, height2));
+              };
+
+              if (headerRef.current || headerRefMobile.current) {
+                     updateHeaderHeight();
+                     window.addEventListener('resize', updateHeaderHeight);
+
                      return () => {
-                            window.removeEventListener('resize', () => {
-                                   props.setHeaderHeight(currentHeader.offsetHeight);
-                            });
-                     }
+                            window.removeEventListener('resize', updateHeaderHeight);
+                     };
               }
        }, [headerRef, props]);
 
@@ -81,70 +82,65 @@ const Header = (props) => {
               console.log(isHovered)
               return isHovered ? elementType.hover : elementType.notHover;
        };
+
        return (
               <div >
                      {/* display this div when media is smaller tha LG */}
                      {/* collapsible navbar */}
                      <div className="lg:hidden" >
-                            <header ref={headerRef} style={styles.header} className='flex-shrink-0 py-4 px-6'>
+                            <header ref={headerRefMobile} style={styles.header} className={`w-full fixed top-0 z-50 flex-shrink-0 py-4 px-6 ${isCollapsed ? "" : 'h-screen absolute w-screen'}`}>
                                    <div className="flex items-center justify-between">
                                           <div className="text-xl font-bold">
-                                                 <h1 style={styles.title}
+                                                 <h1 className='h1' style={styles.title}
                                                         onMouseEnter={handleMouseEnter}
                                                         onMouseLeave={handleMouseLeave}>Arthur CRAHE </h1>
-                                                 <span style={styles.currentSection}>/{currentSection}</span>
+
                                           </div>
-                                          <button className="focus:outline-none lg:hidden" style={getHoverStyles(isNavButtonHovered, styles.button)}
+                                          <button className="flex focus:outline-none lg:hidden" style={getHoverStyles(isNavButtonHovered, styles.button)}
                                                  onMouseEnter={handleNavButtonMouseEnter}
                                                  onMouseLeave={handleNavButtonMouseLeave}
                                                  onClick={toggleNavbar}>
 
-                                                 <svg className="h-6 w-6 fill-current" viewBox="0 0 24 24">
-                                                        <path
-                                                               fillRule="evenodd"
-                                                               clipRule="evenodd"
-                                                               d="M4 6h16v2H4V6zm0 5h16v2H4v-2zm0 5h16v2H4v-2z"
-                                                        />
-                                                 </svg>
+                                                 <span className="self-center material-icons material-symbols-outlined">
+                                                        {isCollapsed ? 'menu' : 'close'}
+                                                 </span>
                                           </button>
                                    </div>
-                                   <div className={`mt-4 ${isCollapsed ? 'hidden' : ''}`}>
-                                          <nav >
-                                                 <a style={currentSection === "home" ? getHoverStyles(isCurrentNavItemHovered, styles.navItems.current) : getHoverStyles(isNavItem1Hovered, styles.navItems.notCurrent)}
+
+                                   <div style={styles.header} className={`mt-36 ${isCollapsed ? 'hidden' : 'flex flex-col items-center'}`}>
+                                          <nav className='flex flex-col flex-wrap content-center justify-center'>
+                                                 <a className='text-center' style={currentSection === "home" ? getHoverStyles(isCurrentNavItemHovered, styles.navItems.current) : getHoverStyles(isNavItem1Hovered, styles.navItems.notCurrent)}
                                                         onMouseEnter={currentSection === "home" ? handleCurrentNavItemMouseEnter : handleNavItem1MouseEnter}
                                                         onMouseLeave={currentSection === "home" ? handleCurrentNavItemMouseLeave : handleNavItem1MouseLeave}
-                                                        onClick={() => handleSectionChange("home")}>{translations[language].home.title}</a>
+                                                        onClick={() => { handleSectionChange("home"); toggleNavbar() }}>{translations[language].home.title}</a>
 
-                                                 <a style={currentSection === "contact" ? getHoverStyles(isCurrentNavItemHovered, styles.navItems.current) : getHoverStyles(isNavItem2Hovered, styles.navItems.notCurrent)}
+                                                 <a className='text-center' style={currentSection === "contact" ? getHoverStyles(isCurrentNavItemHovered, styles.navItems.current) : getHoverStyles(isNavItem2Hovered, styles.navItems.notCurrent)}
                                                         onMouseEnter={currentSection === "contact" ? handleCurrentNavItemMouseEnter : handleNavItem2MouseEnter}
                                                         onMouseLeave={currentSection === "contact" ? handleCurrentNavItemMouseLeave : handleNavItem2MouseLeave}
-                                                        onClick={() => handleSectionChange("contact")}>{translations[language].contact.title}</a>
+                                                        onClick={() => { handleSectionChange("contact"); toggleNavbar() }}>{translations[language].contact.title}</a>
 
-                                                 <a style={currentSection === "about" ? getHoverStyles(isCurrentNavItemHovered, styles.navItems.current) : getHoverStyles(isNavItem3Hovered, styles.navItems.notCurrent)}
+                                                 <a className='text-center' style={currentSection === "about" ? getHoverStyles(isCurrentNavItemHovered, styles.navItems.current) : getHoverStyles(isNavItem3Hovered, styles.navItems.notCurrent)}
                                                         onMouseEnter={currentSection === "about" ? handleCurrentNavItemMouseEnter : handleNavItem3MouseEnter}
                                                         onMouseLeave={currentSection === "about" ? handleCurrentNavItemMouseLeave : handleNavItem3MouseLeave}
-                                                        onClick={() => handleSectionChange("about")}>{translations[language].about.title}</a>
+                                                        onClick={() => { handleSectionChange("about"); toggleNavbar() }}>{translations[language].about.title}</a>
+                                                 <div className='mt-7 flex items-center justify-around'>
+                                                        <button onClick={(toggleLanguage)} className=''>{language === "en" ? <img src={frenchFlag} className='w-7 inline-block' alt="Fench flag" /> : <img className='w-7' src={UKFlag} alt="" />}
+                                                        </button>
+
+                                                        <button onClick={toggleTheme}>
+                                                               <span className={theme === 'light' ? 'material-icons text-black text-2xl' : 'material-icons text-white text-2xl'}>
+                                                                      {theme === 'light' ? 'dark_mode' : 'light_mode'}
+                                                               </span>
+                                                        </button></div>
+
                                           </nav>
-
-                                          <div className='ml-auto flex items-center' id="contexts">
-                                                 <button onClick={(toggleLanguage)}>Language</button>
-                                                 <button onClick={toggleTheme}>
-                                                        <span className={theme === 'light' ? 'material-icons text-black' : 'material-icons text-white'}>
-                                                               {theme === 'light' ? 'dark_mode' : 'light_mode'}
-                                                        </span>
-                                                 </button>
-                                          </div>
-
                                    </div>
-
-
-
                             </header>
                      </div>
 
                      {/* display this div when media is bigger tha LG */}
                      <div className='hidden lg:block'>
-                            <header style={styles.header} ref={headerRef} className='fixed top-0 w-full z-50 py-2 px-20 flex items-center justify-center'>
+                            <header style={styles.header} ref={headerRef} className='fixed top-0 w-full z-50 py-2 px-36 flex items-center justify-center'>
                                    <div className='flex items-center'>
 
                                           <a style={currentSection === "home" ? getHoverStyles(isCurrentNavItemHovered, styles.navItems.current) : getHoverStyles(isNavItem1Hovered, styles.navItems.notCurrent)}
@@ -169,9 +165,12 @@ const Header = (props) => {
                                    </div>
 
                                    <div className='ml-auto flex items-center' id="contexts">
-                                          <button onClick={(toggleLanguage)}>Language</button>
-                                          <button onClick={toggleTheme}>
-                                                 <span className={theme === 'light' ? 'material-icons text-black' : 'material-icons text-white'}>
+                                          <button onClick={(toggleLanguage)} className=''>
+                                                 {language === "en" ? <img src={frenchFlag} className='w-7' alt="Fench flag" /> : <img className='w-7' src={UKFlag} alt="" />}
+                                          </button>
+
+                                          <button className='pl-6' onClick={toggleTheme}>
+                                                 <span className={theme === 'light' ? 'material-icons text-black text-2xl' : 'material-icons text-white text-2xl'}>
                                                         {theme === 'light' ? 'dark_mode' : 'light_mode'}
                                                  </span>
                                           </button>

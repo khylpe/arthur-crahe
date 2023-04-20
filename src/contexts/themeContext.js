@@ -1,15 +1,22 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
+import useThemeDetector from './../hooks/themeDetector'
 
 const ThemeContext = React.createContext(null);
 
 const ThemeProvider = ({ children }) => {
-       const [theme, setTheme] = useState('dark');
+
+       const isDarkTheme = useThemeDetector();
+
+       const [theme, setTheme] = useState(isDarkTheme ? 'dark' : 'light');
        // document.querySelector('html').classList = (`bg-${theme}-document text-${theme}-document`);
 
        const toggleTheme = () => {
               setTheme(currentTheme => (currentTheme === 'light' ? 'dark' : 'light'));
        };
 
+       useEffect(() => {
+              setTheme(isDarkTheme ? 'dark' : 'light');
+       }, [isDarkTheme]);
        return (
               <ThemeContext.Provider value={{ theme, toggleTheme }}>
                      {children}
@@ -33,68 +40,169 @@ const useStyles = () => {
 
        const darkTheme = {
               navItems: {
+                current: {
+                  notHover: {
+                    backgroundColor: "#2b2b2b",
+                    color: "#c0c0c0",
+                    padding: "10px 20px",
+                    borderRadius: "5px",
+                    textDecoration: "none",
+                  },
+                  hover: {
+                    backgroundColor: "#3c3c3c",
+                    padding: "10px 20px",
+                    color: "#c0c0c0",
+                    textDecoration: "none",
+                  },
+                },
+                notCurrent: {
+                  notHover: {
+                    color: "#808080",
+                    textDecoration: "none",
+                    padding: "10px 20px",
+                  },
+                  hover: {
+                    color: "#c0c0c0",
+                    textDecoration: "underline",
+                    padding: "10px 20px",
+                  },
+                },
+              },
+              header: {
+                backgroundColor: "#222222",
+              },
+              title: {
+                fontSize: "1.2rem",
+                fontWeight: "bold",
+                color: "#c0c0c0",
+              },
+              currentSection: {
+                notHover: {
+                  fontWeight: "bold",
+                  color: "#c0c0c0",
+                },
+                hover: {
+                  color: "#5db5ff",
+                },
+              },
+              input: {
+                notHover: {
+                  backgroundColor: "#3c3c3c",
+                  color: "#c0c0c0",
+                  border: "none",
+                  borderRadius: "5px",
+                  padding: "10px",
+                },
+                hover: {
+                  backgroundColor: "#4d4d4d",
+                  borderColor: "#5db5ff",
+                },
+              },
+              button: {
+                notHover: {
+                  backgroundColor: "#3c3c3c",
+                  color: "#c0c0c0",
+                  border: "2px solid #5db5ff",
+                  borderRadius: "5px",
+                  padding: "5px 10px",
+                  cursor: "pointer",
+                },
+                hover: {
+                  backgroundColor: "#4d4d4d",
+                  color: "#c0c0c0",
+                  border: "2px solid #6ec6ff",
+                  borderRadius: "5px",
+                  padding: "5px 10px",
+                  cursor: "pointer",
+                },
+              },
+              link: {
+                notHover: {
+                  color: "#5db5ff",
+                  textDecoration: "none",
+                },
+                hover: {
+                  color: "#6ec6ff",
+                  textDecoration: "underline",
+                },
+              },
+              text: {
+                notHover: {
+                  color: "#c0c0c0",
+                },
+                hover: {
+                  color: "#5db5ff",
+                },
+              },
+              document: {
+                backgroundColor: "#121212",
+              },
+            };
+
+
+       const lightTheme = {
+              navItems: {
                      current: {
                             notHover: {
-                                   backgroundColor: "#333333",
-                                   color: "#ffffff",
+                                   backgroundColor: "#e0e0e0",
+                                   color: "#333333",
                                    padding: "10px 20px",
                                    borderRadius: "5px",
                                    textDecoration: "none",
-
                             },
                             hover: {
-                                   backgroundColor: "#4d4d4d",
+                                   backgroundColor: "#d0d0d0",
                                    padding: "10px 20px",
-                                   color: "#ffffff",
+                                   color: "#333333",
                                    textDecoration: "none",
                             },
                      },
                      notCurrent: {
                             notHover: {
-                                   color: "#b8b8b8",
+                                   color: "#707070",
                                    textDecoration: "none",
                                    padding: "10px 20px",
                             },
                             hover: {
-                                   color: "#ffffff",
+                                   color: "#333333",
                                    textDecoration: "underline",
                                    padding: "10px 20px",
                             },
                      },
               },
               header: {
-                     backgroundColor: "#333322",
+                     backgroundColor: "#f0f0f0",
               },
               title: {
                      fontSize: "28px",
                      fontWeight: "bold",
-                     color: "#ffffff"
+                     color: "#333333",
               },
               currentSection: {
                      notHover: {
                             fontWeight: "bold",
-                            color: "#ffffff",
+                            color: "#333333",
                      },
                      hover: {
-                            color: "#ff8c00",
+                            color: "#0077cc",
                      },
               },
               input: {
                      notHover: {
-                            backgroundColor: "#444444",
-                            color: "#ffffff",
-                            border: "none",
+                            backgroundColor: "#ffffff",
+                            color: "#333333",
+                            border: "1px solid #cccccc",
                             borderRadius: "5px",
                             padding: "10px",
                      },
                      hover: {
-                            backgroundColor: "#555555",
-                            borderColor: "#ff8c00",
+                            backgroundColor: "#f8f8f8",
+                            borderColor: "#0077cc",
                      },
               },
               button: {
                      notHover: {
-                            backgroundColor: "#ff8c00",
+                            backgroundColor: "#0077cc",
                             color: "#ffffff",
                             border: "none",
                             borderRadius: "5px",
@@ -102,7 +210,7 @@ const useStyles = () => {
                             cursor: "pointer",
                      },
                      hover: {
-                            backgroundColor: "#ff6347",
+                            backgroundColor: "#0088dd",
                             color: "#ffffff",
                             border: "none",
                             borderRadius: "5px",
@@ -112,106 +220,11 @@ const useStyles = () => {
               },
               link: {
                      notHover: {
-                            color: "#ff8c00",
+                            color: "#0077cc",
                             textDecoration: "none",
                      },
                      hover: {
-                            color: "#ff6347",
-                            textDecoration: "underline",
-                     },
-              },
-              text: {
-                     notHover: {
-                            color: "#ffffff",
-                     },
-                     hover: {
-                            color: "#ff8c00",
-                     },
-              },
-              document: {
-                     backgroundColor: "#1a1a1a",
-              },
-       };
-
-       const lightTheme = {
-              navItems: {
-                     current: {
-                            notHover: {
-                                   backgroundColor: "#FDFDFD",
-                                   color: "#333333",
-                                   padding: "10px 20px",
-                                   borderRadius: "5px",
-                            },
-                            hover: {
-                                   backgroundColor: "#F5F5F5",
-                                   color: "#333333",
-                            },
-                     },
-                     notCurrent: {
-                            notHover: {
-                                   color: "#666666",
-                                   textDecoration: "none",
-                            },
-                            hover: {
-                                   color: "#333333",
-                                   textDecoration: "underline",
-                            },
-                     },
-              },
-              title: {
-                     notHover: {
-                            fontSize: "28px",
-                            fontWeight: "bold",
-                            color: "#333333",
-                     },
-                     hover: {
-                            fontSize: "28px",
-                            fontWeight: "bold",
-                            color: "#4169E1",
-                     },
-              },
-              currentSection: {
-                     notHover: {
-                            fontWeight: "bold",
-                            color: "#333333",
-                     },
-                     hover: {
-                            color: "#4169E1",
-                     },
-              },
-              input: {
-                     notHover: {
-                            backgroundColor: "#FFFFFF",
-                            color: "#333333",
-                            border: "1px solid #D4D4D4",
-                            borderRadius: "5px",
-                            padding: "10px",
-                     },
-                     hover: {
-                            backgroundColor: "#F5F5F5",
-                            borderColor: "#4169E1",
-                     },
-              },
-              button: {
-                     notHover: {
-                            backgroundColor: "#4169E1",
-                            color: "#FFFFFF",
-                            border: "none",
-                            borderRadius: "5px",
-                            padding: "10px 20px",
-                            cursor: "pointer",
-                     },
-                     hover: {
-                            backgroundColor: "#1E90FF",
-                     },
-              },
-              link: {
-                     notHover: {
-                            color: "#4169E1",
-                            textDecoration: "none",
-                     },
-                     hover: {
-                            color: "#1E90FF",
+                            color: "#0088dd",
                             textDecoration: "underline",
                      },
               },
@@ -220,14 +233,13 @@ const useStyles = () => {
                             color: "#333333",
                      },
                      hover: {
-                            color: "#4169E1",
+                            color: "#0077cc",
                      },
               },
               document: {
-                     backgroundColor: "#FFFFFF",
+                     backgroundColor: "#ffffff",
               },
        };
-
        return theme === 'dark' ? darkTheme : lightTheme;
 }
 export { ThemeContext, ThemeProvider, useTheme, useStyles };

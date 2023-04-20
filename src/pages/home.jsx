@@ -7,7 +7,7 @@ const Home = ({ headerHeight }) => {
 
        return (
               <div className='h-screen' style={styles.document}>
-                     <div style={{ paddingTop: headerHeight }}><h1 >Welcome to the Home section!</h1></div>
+                     <div style={{ paddingTop: headerHeight }}><h1 className='text-white'>Welcome to the Home section!</h1></div>
               </div>
        )
 };

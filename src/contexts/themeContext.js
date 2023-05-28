@@ -4,9 +4,7 @@ import useThemeDetector from './../hooks/themeDetector'
 const ThemeContext = React.createContext(null);
 
 const ThemeProvider = ({ children }) => {
-
        const isDarkTheme = useThemeDetector();
-
        const [theme, setTheme] = useState(isDarkTheme ? 'dark' : 'light');
        // document.querySelector('html').classList = (`bg-${theme}-document text-${theme}-document`);
 
@@ -30,8 +28,6 @@ const useTheme = () => {
        if (!context) {
               throw new Error('useTheme must be used within a ThemeProvider');
        }
-
-
        return context;
 };
 
@@ -138,7 +134,6 @@ const useStyles = () => {
                 backgroundColor: "#121212",
               },
             };
-
 
        const lightTheme = {
               navItems: {

@@ -9,7 +9,6 @@ import Home from './pages/home';
 import Contact from './pages/contact';
 import About from './pages/about';
 
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 const MainContent = ({ headerHeight }) => {

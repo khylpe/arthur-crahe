@@ -1,8 +1,8 @@
 {
-       "homepage": "http://localhost/test/",
+       "homepage": "https://crahe-arthur.com/",
        "description": "Arthur CRAHE's personal website",
        "name": "arthur-crahe",
-       "version": "0.1.0",
+       "version": "0.2.0",
        "private": true,
        "dependencies": {
               "@testing-library/jest-dom": "^5.16.5",

@@ -8,11 +8,14 @@ import { LanguageProvider } from './contexts/languageContext';
 import Home from './pages/home';
 import Contact from './pages/contact';
 import About from './pages/about';
+import Maintenance from './pages/maintenance';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 const MainContent = ({ headerHeight }) => {
        const { currentSection } = useSection();
+       return <Maintenance headerHeight={headerHeight}></Maintenance>
 
        switch (currentSection) {
               case "home":
@@ -24,6 +27,7 @@ const MainContent = ({ headerHeight }) => {
               default:
                      return <div style={{ paddingTop: headerHeight }}>Section not found</div>;
        }
+       
 };
 
 const App = () => {

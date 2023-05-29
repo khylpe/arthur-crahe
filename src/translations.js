@@ -15,6 +15,10 @@ export const translations = {
               contact: {
                      title: "Contact",
 
+              },
+              maintenance: {
+                     title: "Site en maintenance",
+                     description: "Le site est actuellement en maintenance. Veuillez réessayer plus tard.",
               }
        },
 
@@ -33,6 +37,10 @@ export const translations = {
               },
               contact: {
                      title: "Contact",                     
+              },
+              maintenance: {
+                     title: "Site under maintenance",
+                     description: "The site is currently under planned maintenance. Please try again later.",
               }
        }
 

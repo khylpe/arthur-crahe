@@ -17,7 +17,6 @@ export const LanguageProvider = ({ children }) => {
        );
 };
 
-
 export const withLanguage = (WrappedComponent) => {
        return (props) => {
               const languageContext = useContext(LanguageContext);

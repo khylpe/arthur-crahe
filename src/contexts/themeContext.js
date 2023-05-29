@@ -36,104 +36,118 @@ const useStyles = () => {
 
        const darkTheme = {
               navItems: {
-                current: {
-                  notHover: {
-                    backgroundColor: "#2b2b2b",
-                    color: "#c0c0c0",
-                    padding: "10px 20px",
-                    borderRadius: "5px",
-                    textDecoration: "none",
-                  },
-                  hover: {
-                    backgroundColor: "#3c3c3c",
-                    padding: "10px 20px",
-                    color: "#c0c0c0",
-                    textDecoration: "none",
-                  },
-                },
-                notCurrent: {
-                  notHover: {
-                    color: "#808080",
-                    textDecoration: "none",
-                    padding: "10px 20px",
-                  },
-                  hover: {
-                    color: "#c0c0c0",
-                    textDecoration: "underline",
-                    padding: "10px 20px",
-                  },
-                },
+                     current: {
+                            notHover: {
+                                   backgroundColor: "#2b2b2b",
+                                   color: "#c0c0c0",
+                                   padding: "10px 20px",
+                                   borderRadius: "5px",
+                                   textDecoration: "none",
+                            },
+                            hover: {
+                                   backgroundColor: "#3c3c3c",
+                                   padding: "10px 20px",
+                                   color: "#c0c0c0",
+                                   textDecoration: "none",
+                            },
+                     },
+                     notCurrent: {
+                            notHover: {
+                                   color: "#808080",
+                                   textDecoration: "none",
+                                   padding: "10px 20px",
+                            },
+                            hover: {
+                                   color: "#c0c0c0",
+                                   textDecoration: "underline",
+                                   padding: "10px 20px",
+                            },
+                     },
+              },
+              maintenance: {
+                     title: {
+                            fontSize: "4rem",
+                            fontWeight: "bold",
+                            color: "#c0c0c0",
+                            textAlign: "center",
+                            margin: "20px 0",
+                     },
+                     description: {
+                            fontSize: "1rem",
+                            color: "#c0c0c0",
+                            textAlign: "center",
+                     },
               },
               header: {
-                backgroundColor: "#222222",
+                     backgroundColor: "#222222",
               },
               title: {
-                fontSize: "1.2rem",
-                fontWeight: "bold",
-                color: "#c0c0c0",
+                     fontSize: "1.2rem",
+                     fontWeight: "bold",
+                     color: "#c0c0c0",
               },
               currentSection: {
-                notHover: {
-                  fontWeight: "bold",
-                  color: "#c0c0c0",
-                },
-                hover: {
-                  color: "#5db5ff",
-                },
+                     notHover: {
+                            fontWeight: "bold",
+                            color: "#c0c0c0",
+                     },
+                     hover: {
+                            color: "#5db5ff",
+                     },
               },
               input: {
-                notHover: {
-                  backgroundColor: "#3c3c3c",
-                  color: "#c0c0c0",
-                  border: "none",
-                  borderRadius: "5px",
-                  padding: "10px",
-                },
-                hover: {
-                  backgroundColor: "#4d4d4d",
-                  borderColor: "#5db5ff",
-                },
+                     notHover: {
+                            backgroundColor: "#3c3c3c",
+                            color: "#c0c0c0",
+                            border: "none",
+                            borderRadius: "5px",
+                            padding: "10px",
+                     },
+                     hover: {
+                            backgroundColor: "#4d4d4d",
+                            borderColor: "#5db5ff",
+                     },
               },
               button: {
-                notHover: {
-                  backgroundColor: "#3c3c3c",
-                  color: "#c0c0c0",
-                  border: "2px solid #5db5ff",
-                  borderRadius: "5px",
-                  padding: "5px 10px",
-                  cursor: "pointer",
-                },
-                hover: {
-                  backgroundColor: "#4d4d4d",
-                  color: "#c0c0c0",
-                  border: "2px solid #6ec6ff",
-                  borderRadius: "5px",
-                  padding: "5px 10px",
-                  cursor: "pointer",
-                },
+                     notHover: {
+                            backgroundColor: "#3c3c3c",
+                            color: "#c0c0c0",
+                            border: "2px solid #5db5ff",
+                            borderRadius: "5px",
+                            padding: "5px 10px",
+                            cursor: "pointer",
+                     },
+                     hover: {
+                            backgroundColor: "#4d4d4d",
+                            color: "#c0c0c0",
+                            border: "2px solid #6ec6ff",
+                            borderRadius: "5px",
+                            padding: "5px 10px",
+                            cursor: "pointer",
+                     },
               },
               link: {
-                notHover: {
-                  color: "#5db5ff",
-                  textDecoration: "none",
-                },
-                hover: {
-                  color: "#6ec6ff",
-                  textDecoration: "underline",
-                },
+                     notHover: {
+                            color: "#5db5ff",
+                            textDecoration: "none",
+                     },
+                     hover: {
+                            color: "#6ec6ff",
+                            textDecoration: "underline",
+                     },
               },
               text: {
-                notHover: {
-                  color: "#c0c0c0",
-                },
-                hover: {
-                  color: "#5db5ff",
-                },
+                     notHover: {
+                            color: "#c0c0c0",
+                     },
+                     hover: {
+                            color: "#5db5ff",
+                     },
               },
               document: {
-                backgroundColor: "#121212",
+                     backgroundColor: "#121212",
               },
-            };
+       };
 
        const lightTheme = {
               navItems: {
@@ -165,11 +179,25 @@ const useStyles = () => {
                             },
                      },
               },
+              maintenance: {
+                     title: {
+                            fontSize: "4rem",
+                            fontWeight: "bold",
+                            color: "#333333",
+                            textAlign: "center",
+                            margin: "20px 0",
+                     },
+                     description: {
+                            fontSize: "1rem",
+                            color: "#333333",
+                            textAlign: "center",
+                     },
+              },
               header: {
                      backgroundColor: "#f0f0f0",
               },
               title: {
-                     fontSize: "28px",
+                     fontSize: "1.2rem",
                      fontWeight: "bold",
                      color: "#333333",
               },

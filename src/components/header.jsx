@@ -79,7 +79,6 @@ const Header = (props) => {
 
 
        const getHoverStyles = (isHovered, elementType) => {
-              console.log(isHovered)
               return isHovered ? elementType.hover : elementType.notHover;
        };
 

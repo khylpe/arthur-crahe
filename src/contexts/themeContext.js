@@ -15,6 +15,7 @@ const ThemeProvider = ({ children }) => {
        useEffect(() => {
               setTheme(isDarkTheme ? 'dark' : 'light');
        }, [isDarkTheme]);
+
        return (
               <ThemeContext.Provider value={{ theme, toggleTheme }}>
                      {children}
@@ -93,17 +94,13 @@ const useStyles = () => {
                      },
               },
               input: {
-                     notHover: {
-                            backgroundColor: "#3c3c3c",
-                            color: "#c0c0c0",
-                            border: "none",
-                            borderRadius: "5px",
-                            padding: "10px",
-                     },
-                     hover: {
-                            backgroundColor: "#4d4d4d",
-                            borderColor: "#5db5ff",
-                     },
+
+                     backgroundColor: "#3c3c3c",
+                     color: "#c0c0c0",
+                     border: "1px solid #cccccc",
+                     borderRadius: "5px",
+                     padding: "10px",
+
               },
               button: {
                      notHover: {
@@ -134,12 +131,8 @@ const useStyles = () => {
                      },
               },
               text: {
-                     notHover: {
-                            color: "#c0c0c0",
-                     },
-                     hover: {
-                            color: "#5db5ff",
-                     },
+                     color: "#c0c0c0",
+                     fontSize: "1.5rem",
               },
               document: {
                      backgroundColor: "#121212",
@@ -208,17 +201,11 @@ const useStyles = () => {
                      },
               },
               input: {
-                     notHover: {
-                            backgroundColor: "#ffffff",
-                            color: "#333333",
-                            border: "1px solid #cccccc",
-                            borderRadius: "5px",
-                            padding: "10px",
-                     },
-                     hover: {
-                            backgroundColor: "#f8f8f8",
-                            borderColor: "#0077cc",
-                     },
+                     backgroundColor: "#ffffff",
+                     color: "#333333",
+                     border: "1px solid #cccccc",
+                     borderRadius: "5px",
+                     padding: "10px",
               },
               button: {
                      notHover: {
@@ -249,12 +236,8 @@ const useStyles = () => {
                      },
               },
               text: {
-                     notHover: {
-                            color: "#333333",
-                     },
-                     hover: {
-                            color: "#0077cc",
-                     },
+                     color: "#333333",
+                     fontSize: "1.5rem",
               },
               document: {
                      backgroundColor: "#ffffff",

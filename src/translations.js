@@ -14,7 +14,12 @@ export const translations = {
               },
               contact: {
                      title: "Contact",
-
+                     form: {
+                            mail: "Courriel",
+                            subject: "Sujet",
+                            message: "Message",
+                            send: "Envoyer",
+                     },
               },
               maintenance: {
                      title: "Site en maintenance",
@@ -36,7 +41,13 @@ export const translations = {
                      button: "Learn more"
               },
               contact: {
-                     title: "Contact",                     
+                     title: "Contact",
+                     form: {
+                            mail: "Your mail",
+                            subject: "Subject",
+                            message: "Message",
+                            send: "Send",
+                     }
               },
               maintenance: {
                      title: "Site under maintenance",

@@ -2,7 +2,7 @@
        "homepage": "https://crahe-arthur.com/",
        "description": "Arthur CRAHE's personal website",
        "name": "arthur-crahe",
-       "version": "0.2.0",
+       "version": "0.3.0",
        "private": true,
        "dependencies": {
               "@testing-library/jest-dom": "^5.16.5",

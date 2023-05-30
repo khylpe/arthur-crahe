@@ -36,6 +36,16 @@ const Header = (props) => {
               }
        }, [headerRef, props]);
 
+       useEffect(() => {
+              // Reset all hover states
+              handleNavItem1MouseLeave();
+              handleNavItem2MouseLeave();
+              handleNavItem3MouseLeave();
+              handleCurrentNavItemMouseLeave();
+              handleNavButtonMouseLeave();
+          }, [currentSection]);
+          
+
        const handleSectionChange = (section) => {
               props.setCurrentSection(section);
        }
@@ -90,9 +100,7 @@ const Header = (props) => {
                             <header ref={headerRefMobile} style={styles.header} className={`w-full fixed top-0 z-50 flex-shrink-0 py-4 px-6 ${isCollapsed ? "" : 'h-screen absolute w-screen'}`}>
                                    <div className="flex items-center justify-between">
                                           <div className="text-xl font-bold">
-                                                 <h1 className='h1' style={styles.title}
-                                                        onMouseEnter={handleMouseEnter}
-                                                        onMouseLeave={handleMouseLeave}>Arthur CRAHE </h1>
+                                                 <h1 className='h1' style={styles.title}>Arthur CRAHE </h1>
 
                                           </div>
                                           <button className="flex focus:outline-none lg:hidden" style={getHoverStyles(isNavButtonHovered, styles.button)}

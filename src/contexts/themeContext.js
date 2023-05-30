@@ -42,19 +42,16 @@ const useStyles = () => {
                                    color: "#c0c0c0",
                                    padding: "10px 20px",
                                    borderRadius: "5px",
-                                   textDecoration: "none",
                             },
                             hover: {
                                    backgroundColor: "#3c3c3c",
                                    padding: "10px 20px",
                                    color: "#c0c0c0",
-                                   textDecoration: "none",
                             },
                      },
                      notCurrent: {
                             notHover: {
                                    color: "#808080",
-                                   textDecoration: "none",
                                    padding: "10px 20px",
                             },
                             hover: {

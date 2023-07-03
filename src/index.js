@@ -9,7 +9,7 @@ import Home from './pages/home';
 import Contact from './pages/contact';
 import About from './pages/about';
 import Maintenance from './pages/maintenance';
-
+import './styles/themes.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -32,7 +32,6 @@ const MainContent = ({ headerHeight }) => {
 
 const App = () => {
        const [headerHeight, setHeaderHeight] = useState(0);
-
        return (
               <React.StrictMode>
                   <ThemeProvider>

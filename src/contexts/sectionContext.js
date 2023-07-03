@@ -1,15 +1,18 @@
 import React, { createContext, useContext, useState } from "react";
+import { useTheme } from './../contexts/themeContext';
 
 const SectionContext = createContext();
 
 export const SectionProvider = ({ children }) => {
-       const [headerHeight, setHeaderHeight] = useState(0);
-       
+       const { theme } = useTheme();
        const [currentSection, setCurrentSection] = useState("home");
 
+       document.querySelector("html").classList = theme;
        return (
-              <SectionContext.Provider value={{ currentSection, setCurrentSection }}>
-                     {children}
+              <SectionContext.Provider value={{ currentSection, setCurrentSection }} >
+                     <div className={theme}>
+                            {children}
+                     </div>
               </SectionContext.Provider>
        );
 };

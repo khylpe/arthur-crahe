@@ -1,0 +1,185 @@
+// Dark Theme
+$dark-primary-color: #212121;
+$dark-secondary-color: #373737;
+$dark-accent-color: #e0e0e0;       
+$dark-hover-color: #333;
+$dark-active-color: #666;
+
+// Light Theme
+$light-primary-color: #fff;
+$light-secondary-color: #f2f2f2;
+$light-accent-color: #333;
+$light-hover-color: #ddd;
+$light-active-color: #ccc;
+
+.dark {
+       body {
+              background-color: $dark-primary-color;
+              color: $dark-accent-color;
+       }
+
+       .navItems {
+              .currentSection {
+                     color: $dark-accent-color;
+
+                     &:not(:hover) {
+                            background-color: $dark-primary-color;
+                     }
+
+                     &:hover {
+                            background-color: $dark-hover-color;
+                     }
+              }
+
+              .notCurrentSection {
+                     color: $dark-accent-color;
+
+                     &:not(:hover) {
+                            background-color: $dark-secondary-color;
+                     }
+
+                     &:hover {
+                            background-color: $dark-hover-color;
+                     }
+
+              }
+       }
+
+       .header {
+              background-color: $dark-secondary-color;
+              border-color: $dark-hover-color;
+       }
+
+       .title,
+       .sectionTitle {
+              color: $dark-accent-color;
+       }
+
+       .sectionDescription,
+       .sectionText {
+              color: $dark-accent-color;
+       }
+
+       .input {
+              background-color: $dark-secondary-color !important;
+              color: $dark-accent-color !important;
+              border-color: $dark-hover-color !important;      
+       }
+
+       .button {
+              background-color: $dark-secondary-color;
+              color: $dark-accent-color;
+
+              &:not(:hover) {
+                     border-color: $dark-hover-color;
+              }
+
+              &:hover {
+                     background-color: $dark-hover-color;
+              }
+       }
+
+       .link {
+              color: $dark-accent-color;
+
+              &:not(:hover) {
+                     text-decoration: none;
+              }
+
+              &:hover {
+                     color: $dark-hover-color;
+              }
+
+              &:active {
+                     color: $dark-active-color;
+              }
+       }
+}
+
+.light {
+       body {
+              background-color: $light-primary-color;
+              color: $light-accent-color;
+       }
+
+       .navItems {
+              color: $light-accent-color;
+
+              .currentSection {
+
+
+                     &:not(:hover) {
+                            background-color: $light-primary-color;
+                     }
+
+                     &:hover {
+                            background-color: $light-hover-color;
+                     }
+              }
+
+              .notCurrentSection {
+
+                     &:not(:hover) {
+                            background-color: $light-secondary-color;
+                     }
+
+                     &:hover {
+                            background-color: $light-hover-color;
+                     }
+              }
+       }
+
+       .header {
+              background-color: $light-secondary-color;
+              border-color: $light-hover-color;
+       }
+
+       .title,
+       .sectionTitle {
+              color: $light-accent-color;
+       }
+
+       .sectionDescription,
+       .sectionText {
+              color: $light-accent-color;
+       }
+
+       .input {
+              background-color: $light-secondary-color;
+              color: $light-accent-color;
+              border-color: $light-hover-color;
+
+              &:focus {
+                     border-color: $light-active-color;
+              }
+       }
+
+       .button {
+              background-color: $light-secondary-color;
+              color: $light-accent-color;
+
+              &:not(:hover) {
+                     border-color: $light-hover-color;
+              }
+
+              &:hover {
+                     background-color: $light-hover-color;
+              }
+       }
+
+       .link {
+              color: $light-accent-color;
+
+              &:not(:hover) {
+                     text-decoration: none;
+              }
+
+              &:hover {
+                     color: $light-hover-color;
+              }
+
+              &:active {
+                     color: $light-active-color;
+              }
+       }
+}

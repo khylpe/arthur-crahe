@@ -14,12 +14,21 @@ export const translations = {
               },
               contact: {
                      title: "Contact",
-                     form: {
+                     contactForm: {
                             mail: "Courriel",
                             subject: "Sujet",
                             message: "Message",
                             send: "Envoyer",
+                            subjectPlaceholder: "Sujet du message",
+                            messagePlaceholder: "Votre message",
+                            submit: "Envoyer",
+                            firstName: "Prénom",
+                            lastName: "Nom",
+                            companyOrOrganizationOrSchool: "Entreprise, organisation ou école",
+                            companyOrOrganizationOrSchoolPlaceholder: "Employé chez Google"
                      },
+                     successMessageSent: "Votre message a été envoyé avec succès.",
+                     loadingSendingMessage: "Envoi du message..."
               },
               maintenance: {
                      title: "Site en maintenance",
@@ -42,12 +51,21 @@ export const translations = {
               },
               contact: {
                      title: "Contact",
-                     form: {
+                     contactForm: {
                             mail: "Your mail",
                             subject: "Subject",
                             message: "Message",
                             send: "Send",
-                     }
+                            subjectPlaceholder: "Message subject",
+                            messagePlaceholder: "Your message",
+                            submit: "Send",
+                            firstName: "First name",
+                            lastName: "Last name",
+                            companyOrOrganizationOrSchool: "Company, organization or school",
+                            companyOrOrganizationOrSchoolPlaceholder: "Employe at Google"
+                     },
+                     successMessageSent: "Your message has been sent successfully.",
+                     loadingSendingMessage: "Sending message...",
               },
               maintenance: {
                      title: "Site under maintenance",

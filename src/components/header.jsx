@@ -1,191 +1,137 @@
-import React, { Component, useState, useRef, useEffect } from 'react';
-import './../styles/header.css';
-import { useTheme, useStyles } from './../contexts/themeContext';
+import React, { useEffect, useRef } from 'react';
+import { useTheme } from './../contexts/themeContext';
 import { withSection } from "./../contexts/sectionContext";
 import { withLanguage } from "./../contexts/languageContext";
 import { translations } from "./../translations";
-import useHover from './../hooks/useHover';
+
+// imports for the flags
 import frenchFlag from './../img/france_icon.png'
 import UKFlag from './../img/kingdom_united_icon.png'
+
+// imports for the logo
+import logoBlack from './../img/black.png'
+import logoWhite from './../img/white.png'
+
+// imports for the header (mobile and desktop)
+import { Disclosure } from '@headlessui/react'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const Header = (props) => {
        const { currentSection } = props;
        const { theme, toggleTheme } = useTheme();
        const { language, toggleLanguage } = props;
-       const [isCollapsed, setIsCollapsed] = useState(true);
        const headerRef = useRef(null);
-       const headerRefMobile = useRef(null);
-
-       const styles = useStyles();
-       const { isHovered, handleMouseEnter, handleMouseLeave } = useHover();
 
        useEffect(() => {
               const updateHeaderHeight = () => {
                      const height1 = headerRef.current ? headerRef.current.offsetHeight : 0;
-                     const height2 = headerRefMobile.current ? headerRefMobile.current.offsetHeight : 0;
-                     props.setHeaderHeight(Math.max(height1, height2));
+                     props.setHeaderHeight(height1);
               };
 
-              if (headerRef.current || headerRefMobile.current) {
-                     updateHeaderHeight();
-                     window.addEventListener('resize', updateHeaderHeight);
+              updateHeaderHeight();
+              window.addEventListener('resize', updateHeaderHeight);
 
-                     return () => {
-                            window.removeEventListener('resize', updateHeaderHeight);
-                     };
-              }
+              return () => {
+                     window.removeEventListener('resize', updateHeaderHeight);
+              };
+
        }, [headerRef, props]);
-
-       useEffect(() => {
-              // Reset all hover states
-              handleNavItem1MouseLeave();
-              handleNavItem2MouseLeave();
-              handleNavItem3MouseLeave();
-              handleCurrentNavItemMouseLeave();
-              handleNavButtonMouseLeave();
-          }, [currentSection]);
-          
 
        const handleSectionChange = (section) => {
               props.setCurrentSection(section);
        }
 
-       const toggleNavbar = () => {
-              if (!isCollapsed) {
-                     props.setHeaderHeight(headerRef.current.offsetHeight);
-              }
-              setIsCollapsed(!isCollapsed);
-       };
-
-       const {
-              isHovered: isNavItem1Hovered,
-              handleMouseEnter: handleNavItem1MouseEnter,
-              handleMouseLeave: handleNavItem1MouseLeave,
-       } = useHover();
-
-       const {
-              isHovered: isNavItem2Hovered,
-              handleMouseEnter: handleNavItem2MouseEnter,
-              handleMouseLeave: handleNavItem2MouseLeave,
-       } = useHover();
-
-       const {
-              isHovered: isNavItem3Hovered,
-              handleMouseEnter: handleNavItem3MouseEnter,
-              handleMouseLeave: handleNavItem3MouseLeave,
-       } = useHover();
-
-       const {
-              isHovered: isCurrentNavItemHovered,
-              handleMouseEnter: handleCurrentNavItemMouseEnter,
-              handleMouseLeave: handleCurrentNavItemMouseLeave,
-       } = useHover();
-
-       const {
-              isHovered: isNavButtonHovered,
-              handleMouseEnter: handleNavButtonMouseEnter,
-              handleMouseLeave: handleNavButtonMouseLeave,
-       } = useHover();
-
-
-       const getHoverStyles = (isHovered, elementType) => {
-              return isHovered ? elementType.hover : elementType.notHover;
-       };
-
        return (
-              <div >
-                     {/* display this div when media is smaller tha LG */}
-                     {/* collapsible navbar */}
-                     <div className="lg:hidden" >
-                            <header ref={headerRefMobile} style={styles.header} className={`w-full fixed top-0 z-50 flex-shrink-0 py-4 px-6 ${isCollapsed ? "" : 'h-screen absolute w-screen'}`}>
-                                   <div className="flex items-center justify-between">
-                                          <div className="text-xl font-bold">
-                                                 <h1 className='h1' style={styles.title}>Arthur CRAHE </h1>
-
+              <Disclosure as="nav" ref={headerRef} className={`fixed w-full header`}>
+                     {({ open }) => (
+                            <>
+                                   <div className="relative z-50 mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 flex h-16 items-center justify-between">
+                                          <Disclosure.Button className="sm:hidden relative z-50 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                                                 <span className="sr-only">Open main menu</span>
+                                                 {open ? (
+                                                        <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
+                                                 ) : (
+                                                        <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
+                                                 )}
+                                          </Disclosure.Button>
+                                          <div className="hidden sm:ml-6 sm:block space-x-4 navItems">
+                                                 <button
+                                                        className={currentSection === "home" ? 'rounded-md px-3 py-2 text-sm font-medium currentSection' : 'rounded-md px-3 py-2 text-sm font-medium notCurrentSection'}
+                                                        onClick={() => handleSectionChange("home")}>{translations[language].home.title}
+                                                 </button>
+                                                 <button
+                                                        className={currentSection === "contact" ? 'rounded-md px-3 py-2 text-sm font-medium currentSection' : 'rounded-md px-3 py-2 text-sm font-medium notCurrentSection'}
+                                                        onClick={() => handleSectionChange("contact")}>{translations[language].contact.title}
+                                                 </button>
+                                                 <button
+                                                        className={currentSection === "about" ? 'rounded-md px-3 py-2 text-sm font-medium currentSection' : 'rounded-md px-3 py-2 text-sm font-medium notCurrentSection'}
+                                                        onClick={() => handleSectionChange("about")}>{translations[language].about.title}
+                                                 </button>
                                           </div>
-                                          <button className="flex focus:outline-none lg:hidden" style={getHoverStyles(isNavButtonHovered, styles.button)}
-                                                 onMouseEnter={handleNavButtonMouseEnter}
-                                                 onMouseLeave={handleNavButtonMouseLeave}
-                                                 onClick={toggleNavbar}>
-
-                                                 <span className="self-center material-icons material-symbols-outlined">
-                                                        {isCollapsed ? 'menu' : 'close'}
-                                                 </span>
-                                          </button>
+                                          <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                                                 <img
+                                                        draggable="false"
+                                                        className="block h-8 w-auto"
+                                                        src={theme === 'light' ? logoBlack : logoWhite}
+                                                        alt="Arthur CRAHE logo"
+                                                 />
+                                          </div>
+                                          <div className="hidden sm:flex absolute inset-y-0 right-0  items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                                                 <button onClick={toggleTheme}>
+                                                        <span className='material-icons text-2xl p-1'>
+                                                               {theme === 'light' ? 'dark_mode' : 'light_mode'}
+                                                        </span>
+                                                 </button>
+                                                 <button className="ml-3">
+                                                        <img
+                                                               draggable="false"
+                                                               onClick={toggleLanguage}
+                                                               className="h-8 w-8"
+                                                               src={language === 'fr' ? UKFlag : frenchFlag}
+                                                               alt="Current language flag"
+                                                        />
+                                                 </button>
+                                          </div>
                                    </div>
+                                   <Disclosure.Panel className="sm:hidden">
+                                          <div className="header absolute space-y-10 pb-3 pt-2 flex flex-col flex-wrap content-center justify-center h-screen w-screen top-0 flex-shrink-0 py-4 px-6 navItems z-40">
+                                                 <Disclosure.Button as='button'
+                                                        className={currentSection === "home" ? 'text-2xl rounded-md px-3 py-2 font-medium currentSection' : 'text-2xl rounded-md px-3 py-2 font-medium notCurrentSection'}
+                                                        onClick={() => handleSectionChange("home")}>{translations[language].home.title}
+                                                 </Disclosure.Button>
 
-                                   <div style={styles.header} className={`mt-36 ${isCollapsed ? 'hidden' : 'flex flex-col items-center'}`}>
-                                          <nav className='flex flex-col flex-wrap content-center justify-center'>
-                                                 <a className='text-center' style={currentSection === "home" ? getHoverStyles(isCurrentNavItemHovered, styles.navItems.current) : getHoverStyles(isNavItem1Hovered, styles.navItems.notCurrent)}
-                                                        onMouseEnter={currentSection === "home" ? handleCurrentNavItemMouseEnter : handleNavItem1MouseEnter}
-                                                        onMouseLeave={currentSection === "home" ? handleCurrentNavItemMouseLeave : handleNavItem1MouseLeave}
-                                                        onClick={() => { handleSectionChange("home"); toggleNavbar() }}>{translations[language].home.title}</a>
+                                                 <Disclosure.Button as='button'
+                                                        className={currentSection === "contact" ? 'text-2xl rounded-md px-3 py-2 font-medium currentSection' : 'text-2xl rounded-md px-3 py-2 font-medium notCurrentSection'}
+                                                        onClick={() => handleSectionChange("contact")}>{translations[language].contact.title}
+                                                 </Disclosure.Button>
 
-                                                 <a className='text-center' style={currentSection === "contact" ? getHoverStyles(isCurrentNavItemHovered, styles.navItems.current) : getHoverStyles(isNavItem2Hovered, styles.navItems.notCurrent)}
-                                                        onMouseEnter={currentSection === "contact" ? handleCurrentNavItemMouseEnter : handleNavItem2MouseEnter}
-                                                        onMouseLeave={currentSection === "contact" ? handleCurrentNavItemMouseLeave : handleNavItem2MouseLeave}
-                                                        onClick={() => { handleSectionChange("contact"); toggleNavbar() }}>{translations[language].contact.title}</a>
+                                                 <Disclosure.Button as='button'
+                                                        className={currentSection === "about" ? 'text-2xl rounded-md px-3 py-2 font-medium currentSection' : 'text-2xl rounded-md px-3 py-2 font-medium notCurrentSection'}
+                                                        onClick={() => handleSectionChange("about")}>{translations[language].about.title}
+                                                 </Disclosure.Button>
 
-                                                 <a className='text-center' style={currentSection === "about" ? getHoverStyles(isCurrentNavItemHovered, styles.navItems.current) : getHoverStyles(isNavItem3Hovered, styles.navItems.notCurrent)}
-                                                        onMouseEnter={currentSection === "about" ? handleCurrentNavItemMouseEnter : handleNavItem3MouseEnter}
-                                                        onMouseLeave={currentSection === "about" ? handleCurrentNavItemMouseLeave : handleNavItem3MouseLeave}
-                                                        onClick={() => { handleSectionChange("about"); toggleNavbar() }}>{translations[language].about.title}</a>
-                                                 <div className='mt-7 flex items-center justify-around'>
-                                                        <button onClick={(toggleLanguage)} className=''>{language === "en" ? <img src={frenchFlag} className='w-7 inline-block' alt="Fench flag" /> : <img className='w-7' src={UKFlag} alt="" />}
-                                                        </button>
-
+                                                 <div className='text-center flex items-center justify-evenly'>
                                                         <button onClick={toggleTheme}>
-                                                               <span className={theme === 'light' ? 'material-icons text-black text-2xl' : 'material-icons text-white text-2xl'}>
+                                                               <span className='material-icons text-4xl p-1'>
                                                                       {theme === 'light' ? 'dark_mode' : 'light_mode'}
                                                                </span>
-                                                        </button></div>
-
-                                          </nav>
-                                   </div>
-                            </header>
-                     </div>
-
-                     {/* display this div when media is bigger tha LG */}
-                     <div className='hidden lg:block'>
-                            <header style={styles.header} ref={headerRef} className='fixed top-0 w-full z-50 py-2 px-36 flex items-center justify-center'>
-                                   <div className='flex items-center'>
-
-                                          <a style={currentSection === "home" ? getHoverStyles(isCurrentNavItemHovered, styles.navItems.current) : getHoverStyles(isNavItem1Hovered, styles.navItems.notCurrent)}
-                                                 onMouseEnter={currentSection === "home" ? handleCurrentNavItemMouseEnter : handleNavItem1MouseEnter}
-                                                 onMouseLeave={currentSection === "home" ? handleCurrentNavItemMouseLeave : handleNavItem1MouseLeave}
-                                                 onClick={() => handleSectionChange("home")}>{translations[language].home.title}</a>
-
-                                          <a style={currentSection === "contact" ? getHoverStyles(isCurrentNavItemHovered, styles.navItems.current) : getHoverStyles(isNavItem2Hovered, styles.navItems.notCurrent)}
-                                                 onMouseEnter={currentSection === "contact" ? handleCurrentNavItemMouseEnter : handleNavItem2MouseEnter}
-                                                 onMouseLeave={currentSection === "contact" ? handleCurrentNavItemMouseLeave : handleNavItem2MouseLeave}
-                                                 onClick={() => handleSectionChange("contact")}>{translations[language].contact.title}</a>
-
-                                          <a style={currentSection === "about" ? getHoverStyles(isCurrentNavItemHovered, styles.navItems.current) : getHoverStyles(isNavItem3Hovered, styles.navItems.notCurrent)}
-                                                 onMouseEnter={currentSection === "about" ? handleCurrentNavItemMouseEnter : handleNavItem3MouseEnter}
-                                                 onMouseLeave={currentSection === "about" ? handleCurrentNavItemMouseLeave : handleNavItem3MouseLeave}
-                                                 onClick={() => handleSectionChange("about")}>{translations[language].about.title}</a>
-
-                                   </div>
-
-                                   <div className='absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2'>
-                                          <h1 style={styles.title}>Arthur CRAHE</h1>
-                                   </div>
-
-                                   <div className='ml-auto flex items-center' id="contexts">
-                                          <button onClick={(toggleLanguage)} className=''>
-                                                 {language === "en" ? <img src={frenchFlag} className='w-7' alt="Fench flag" /> : <img className='w-7' src={UKFlag} alt="" />}
-                                          </button>
-
-                                          <button className='pl-6' onClick={toggleTheme}>
-                                                 <span className={theme === 'light' ? 'material-icons text-black text-2xl' : 'material-icons text-white text-2xl'}>
-                                                        {theme === 'light' ? 'dark_mode' : 'light_mode'}
-                                                 </span>
-                                          </button>
-                                   </div>
-                            </header>
-                     </div>
-              </div>
-       );
+                                                        </button>
+                                                        <button className="ml-3">
+                                                               <img
+                                                                      draggable="false"
+                                                                      onClick={toggleLanguage}
+                                                                      className="h-10 w-10"
+                                                                      src={language === 'fr' ? UKFlag : frenchFlag}
+                                                                      alt="Current language flag"
+                                                               />
+                                                        </button>
+                                                 </div>
+                                          </div>
+                                   </Disclosure.Panel>
+                            </>
+                     )}
+              </Disclosure>
+       )
 }
 
 export default withLanguage(withSection(Header));

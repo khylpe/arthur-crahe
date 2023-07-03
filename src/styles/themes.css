@@ -1,0 +1,126 @@
+.dark body {
+  background-color: #212121;
+  color: #e0e0e0;
+}
+.dark .navItems .currentSection {
+  color: #e0e0e0;
+}
+.dark .navItems .currentSection:not(:hover) {
+  background-color: #212121;
+}
+.dark .navItems .currentSection:hover {
+  background-color: #333;
+}
+.dark .navItems .notCurrentSection {
+  color: #e0e0e0;
+}
+.dark .navItems .notCurrentSection:not(:hover) {
+  background-color: #373737;
+}
+.dark .navItems .notCurrentSection:hover {
+  background-color: #333;
+}
+.dark .header {
+  background-color: #373737;
+  border-color: #333;
+}
+.dark .title,
+.dark .sectionTitle {
+  color: #e0e0e0;
+}
+.dark .sectionDescription,
+.dark .sectionText {
+  color: #e0e0e0;
+}
+.dark .input {
+  background-color: #373737 !important;
+  color: #e0e0e0 !important;
+  border-color: #333 !important;
+}
+.dark .input:focus {
+  border-color: #666 !important;
+}
+.dark .button {
+  background-color: #373737;
+  color: #e0e0e0;
+}
+.dark .button:not(:hover) {
+  border-color: #333;
+}
+.dark .button:hover {
+  background-color: #333;
+}
+.dark .link {
+  color: #e0e0e0;
+}
+.dark .link:not(:hover) {
+  text-decoration: none;
+}
+.dark .link:hover {
+  color: #333;
+}
+.dark .link:active {
+  color: #666;
+}
+
+.light body {
+  background-color: #fff;
+  color: #333;
+}
+.light .navItems {
+  color: #333;
+}
+.light .navItems .currentSection:not(:hover) {
+  background-color: #fff;
+}
+.light .navItems .currentSection:hover {
+  background-color: #ddd;
+}
+.light .navItems .notCurrentSection:not(:hover) {
+  background-color: #f2f2f2;
+}
+.light .navItems .notCurrentSection:hover {
+  background-color: #ddd;
+}
+.light .header {
+  background-color: #f2f2f2;
+  border-color: #ddd;
+}
+.light .title,
+.light .sectionTitle {
+  color: #333;
+}
+.light .sectionDescription,
+.light .sectionText {
+  color: #333;
+}
+.light .input {
+  background-color: #f2f2f2;
+  color: #333;
+  border-color: #ddd;
+}
+.light .input:focus {
+  border-color: #ccc;
+}
+.light .button {
+  background-color: #f2f2f2;
+  color: #333;
+}
+.light .button:not(:hover) {
+  border-color: #ddd;
+}
+.light .button:hover {
+  background-color: #ddd;
+}
+.light .link {
+  color: #333;
+}
+.light .link:not(:hover) {
+  text-decoration: none;
+}
+.light .link:hover {
+  color: #ddd;
+}
+.light .link:active {
+  color: #ccc;
+}/*# sourceMappingURL=themes.css.map */

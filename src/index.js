@@ -15,7 +15,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 const MainContent = ({ headerHeight }) => {
        const { currentSection } = useSection();
-       // return <Maintenance headerHeight={headerHeight}></Maintenance>
+       return <Maintenance headerHeight={headerHeight}></Maintenance>
 
        switch (currentSection) {
               case "home":

@@ -6,8 +6,11 @@ const ThemeContext = React.createContext(null);
 const ThemeProvider = ({ children }) => {
        const isDarkTheme = useThemeDetector();
        const [theme, setTheme] = useState(isDarkTheme ? 'dark' : 'light');
+       document.querySelector("html").classList = theme;
+
 
        const toggleTheme = () => {
+              document.querySelector("html").classList = theme;
               setTheme(currentTheme => (currentTheme === 'light' ? 'dark' : 'light'));
        };
 

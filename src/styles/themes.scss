@@ -12,8 +12,9 @@ $light-accent-color: #333;
 $light-hover-color: #ddd;
 $light-active-color: #ccc;
 
+
 .dark {
-       body {
+       body, .textHR {
               background-color: $dark-primary-color;
               color: $dark-accent-color;
        }
@@ -47,7 +48,6 @@ $light-active-color: #ccc;
 
        .header {
               background-color: $dark-secondary-color;
-              border-color: $dark-hover-color;
        }
 
        .title,
@@ -94,10 +94,13 @@ $light-active-color: #ccc;
                      color: $dark-active-color;
               }
        }
+       .alertBG{
+              background-color: #8596ad;
+       }
 }
 
 .light {
-       body {
+       body, .textHR{
               background-color: $light-primary-color;
               color: $light-accent-color;
        }
@@ -129,11 +132,9 @@ $light-active-color: #ccc;
               }
        }
 
-       .header {
+       .header, .alertBG {
               background-color: $light-secondary-color;
-              border-color: $light-hover-color;
        }
-
        .title,
        .sectionTitle {
               color: $light-accent-color;

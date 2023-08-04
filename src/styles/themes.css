@@ -1,4 +1,4 @@
-.dark body {
+.dark body, .dark .textHR {
   background-color: #212121;
   color: #e0e0e0;
 }
@@ -22,7 +22,6 @@
 }
 .dark .header {
   background-color: #373737;
-  border-color: #333;
 }
 .dark .title,
 .dark .sectionTitle {
@@ -59,8 +58,11 @@
 .dark .link:active {
   color: #666;
 }
+.dark .alertBG {
+  background-color: #8596ad;
+}
 
-.light body {
+.light body, .light .textHR {
   background-color: #fff;
   color: #333;
 }
@@ -79,9 +81,8 @@
 .light .navItems .notCurrentSection:hover {
   background-color: #ddd;
 }
-.light .header {
+.light .header, .light .alertBG {
   background-color: #f2f2f2;
-  border-color: #ddd;
 }
 .light .title,
 .light .sectionTitle {

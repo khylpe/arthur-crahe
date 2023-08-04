@@ -64,8 +64,8 @@ const ContactForm = (props) => {
 
               <div>
                      {fetchStatus === "success" &&
-                            <div class="w-full flex justify-center d-flex content-start">
-                                   <p class="bg-green-500 text-white text-center text-lg h-fit w-full p-4">
+                            <div className="w-full flex justify-center d-flex content-start">
+                                   <p className="bg-green-500 text-white text-center text-lg h-fit w-full p-4">
                                           {translations[language].contact.successMessageSent}  </p>
                             </div>
                      }

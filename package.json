@@ -2,26 +2,29 @@
        "homepage": "https://crahe-arthur.com/",
        "description": "Bienvenue sur le site personnel d'Arthur CRAHÉ. Découvrez qui je suis, mon parcours et mon profil professionnel en tant que Concepteur Développeur d'applications et développeur en environnements web. N'hésitez pas à utiliser le formulaire de contact à votre disposition",
        "name": "arthur-crahe",
-       "version": "0.4.1",
+       "version": "0.5.0",
        "private": true,
        "dependencies": {
               "@headlessui/react": "^1.7.15",
               "@heroicons/react": "^2.0.18",
-              "@testing-library/jest-dom": "^5.16.5",
+              "@testing-library/jest-dom": "^5.17.0",
               "@testing-library/react": "^13.4.0",
               "@testing-library/user-event": "^13.5.0",
               "autoprefixer": "^10.4.14",
-              "dompurify": "^3.0.3",
-              "flowbite": "^1.6.5",
-              "flowbite-react": "^0.4.6",
-              "postcss": "^8.4.24",
+              "dompurify": "^3.0.5",
+              "flowbite": "^1.7.0",
+              "flowbite-react": "^0.5.0",
+              "postcss": "^8.4.26",
               "react": "^18.2.0",
               "react-dom": "^18.2.0",
+              "react-router-dom": "^6.14.2",
               "react-scripts": "5.0.1",
+              "tailwindcss": "^3.3.3",
               "web-vitals": "^2.1.4"
        },
        "scripts": {
               "start": "react-scripts start",
+              "debug": "react-scripts --inspect-brk start",
               "build": "react-scripts build",
               "test": "react-scripts test",
               "eject": "react-scripts eject"
@@ -43,8 +46,5 @@
                      "last 1 firefox version",
                      "last 1 safari version"
               ]
-       },
-       "devDependencies": {
-              "tailwindcss": "^3.3.2"
        }
 }

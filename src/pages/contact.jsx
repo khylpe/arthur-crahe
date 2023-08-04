@@ -1,13 +1,12 @@
 import React from 'react';
 import ContactForm from '../components/contactForm';
 
-const Contact = ({ headerHeight }) => {
+const Contact = () => {
        return (
-              <div className='h-screen'>
-                     <div style={{ paddingTop: headerHeight }}><ContactForm></ContactForm></div>
-              </div>
+                     <div className='min-h-screen'>
+                            <ContactForm></ContactForm>
+                     </div>
        )
 };
-
 
 export default Contact;

@@ -1,11 +1,10 @@
 import React from 'react';
 
-const Home = ({ headerHeight }) => {
+const Home = () => {
        return (
-              <div className='h-screen'>
-                     <div style={{ paddingTop: headerHeight }}><h1 className='text-white'>Welcome to the Home section!</h1></div>
-                     <h2>salut</h2>
-              
+              <div className='min-h-screen'>
+                     <div><h1 className='text-white'>Welcome to the Home section!</h1></div>
+                     <h2>salut</h2>        
               </div>
 
        )

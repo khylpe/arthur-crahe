@@ -6,8 +6,9 @@ ini_set('log_errors', '1');
 ini_set('error_log', './../sendContactFormErrorLogs.log');
 
 // accept cross origin
-header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Headers: *");
+header("Access-Control-Allow-Origin: https://crahe-arthur.com");
+header("Access-Control-Allow-Headers: Content-Type");
+header("Access-Control-Allow-Methods: POST");
 
 date_default_timezone_set("Europe/Paris");
 
@@ -59,9 +60,9 @@ $yourMailTitle = "Your email";
 $subjectTitle = "Subject";
 $messageTitle = "Message";
 $dateAndTime = "Message sent the $date at $time";
-$wrongPersonTitle = "Wrong person ? If you are not <strong>" . $firstNameFromContactForm . " " . $lastNameFromContactForm . "</strong>, please ignore this email. If you think you are being spammed, please contact me through my <a href='https://crahe-arthur.com'>website</a> or click this <a href='https://crahe-arthur.com'>link</a>.";
+$wrongPersonTitle = "Wrong person ? If you are not <strong>" . $firstNameFromContactForm . " " . $lastNameFromContactForm . "</strong>, please ignore this email. If you think you are being spammed, please contact me through my <a href='https://crahe-arthur.com/contact'>website</a>.";
 
-$AltBody = $title . "\n\n" . $textDescription . "\n\n" . $summaryTitle . " : \n\n" . $yourMailTitle . " : " . $mailFromContactForm . "\n\n" . $subjectTitle . " : " . $subjectFromContactForm . "\n\n" . $messageTitle . " : " . $messageFromContactForm . "\n\n" . "--------------------------------------\n\n" . "Wrong person ? If you are not " . $firstNameFromContactForm . " " . $lastNameFromContactForm . ", please ignore this email. If you think you are being spammed, please contact me through my website : https://crahe-arthur.com or click this link : https://crahe-arthur.com";
+$AltBody = $title . "\n\n" . $textDescription . "\n\n" . $summaryTitle . " : \n\n" . $yourMailTitle . " : " . $mailFromContactForm . "\n\n" . $subjectTitle . " : " . $subjectFromContactForm . "\n\n" . $messageTitle . " : " . $messageFromContactForm . "\n\n" . "--------------------------------------\n\n" . "Wrong person ? If you are not " . $firstNameFromContactForm . " " . $lastNameFromContactForm . ", please ignore this email. If you think you are being spammed, please contact me through my website : https://crahe-arthur.com/contact";
 
 
 if ($language === 'fr') {
@@ -70,11 +71,11 @@ if ($language === 'fr') {
        $summaryTitle = "Résumé de votre message";
        $yourMailTitle = "Votre email";
        $subjectTitle = "Sujet";
-       $messageTitle = "Objet";
+       $messageTitle = "Message";
        $dateAndTime = "Message envoyé le $date à $time";
-       $wrongPersonTitle = "Mauvaise personne ? Si vous n'êtes pas <strong>" . $firstNameFromContactForm . " " . $lastNameFromContactForm . "</strong>, veuillez ignorer cet email. Si vous pensez être victime de spam, veuillez me contacter via mon <a href='https://crahe-arthur.com'>site web</a> ou cliquez sur ce <a href='https://crahe-arthur.com'>lien</a>.";
+       $wrongPersonTitle = "Mauvaise personne ? Si vous n'êtes pas <strong>" . $firstNameFromContactForm . " " . $lastNameFromContactForm . "</strong>, veuillez ignorer cet email. Si vous pensez être victime de spam, veuillez me contacter via mon <a href='https://crahe-arthur.com/contact'>site web</a>.";
 
-       $AltBody = $title . "\n\n" . $textDescription . "\n\n" . $summaryTitle . " : \n\n" . $yourMailTitle . " : " . $mailFromContactForm . "\n\n" . $subjectTitle . " : " . $subjectFromContactForm . "\n\n" . $messageTitle . " : " . $messageFromContactForm . "\n\n" . "--------------------------------------\n\n" . "Mauvaise personne ? Si vous n'êtes pas " . $firstNameFromContactForm . " " . $lastNameFromContactForm . ", veuillez ignorer cet email. Si vous pensez être victime de spam, veuillez me contacter via mon site web : https://crahe-arthur.com ou cliquez sur ce lien : https://crahe-arthur.com";
+       $AltBody = $title . "\n\n" . $textDescription . "\n\n" . $summaryTitle . " : \n\n" . $yourMailTitle . " : " . $mailFromContactForm . "\n\n" . $subjectTitle . " : " . $subjectFromContactForm . "\n\n" . $messageTitle . " : " . $messageFromContactForm . "\n\n" . "--------------------------------------\n\n" . "Mauvaise personne ? Si vous n'êtes pas " . $firstNameFromContactForm . " " . $lastNameFromContactForm . ", veuillez ignorer cet email. Si vous pensez être victime de spam, veuillez me contacter via mon site web : https://crahe-arthur.com/contact";
 }
 
 try {

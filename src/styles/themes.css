@@ -20,7 +20,7 @@
 .dark .navItems .notCurrentSection:hover {
   background-color: #333;
 }
-.dark .header {
+.dark .header, .dark .footer {
   background-color: #373737;
 }
 .dark .title,
@@ -81,7 +81,7 @@
 .light .navItems .notCurrentSection:hover {
   background-color: #ddd;
 }
-.light .header, .light .alertBG {
+.light .header, .light .alertBG, .light .footer {
   background-color: #f2f2f2;
 }
 .light .title,

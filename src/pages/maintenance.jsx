@@ -10,8 +10,6 @@ const Maintenance = (props) => {
                      <h1 className="text-6xl">{translations[language].maintenance.title}</h1>
                      <p className="font-light text-gray-500 text-2xl dark:text-gray-400">{translations[language].maintenance.description}</p>
               </section>
-
        )
 };
-// translations[language].home.title
 export default withLanguage(Maintenance);

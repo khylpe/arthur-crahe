@@ -46,7 +46,7 @@ $light-active-color: #ccc;
               }
        }
 
-       .header {
+       .header, .footer {
               background-color: $dark-secondary-color;
        }
 
@@ -132,7 +132,7 @@ $light-active-color: #ccc;
               }
        }
 
-       .header, .alertBG {
+       .header, .alertBG, .footer {
               background-color: $light-secondary-color;
        }
        .title,

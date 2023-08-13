@@ -1,9 +1,7 @@
-import React, { useEffect, useRef } from 'react';
 import { useTheme } from './../contexts/themeContext';
 import { withLanguage } from "./../contexts/languageContext";
 import { translations } from "./../translations";
 import { Link, useLocation } from 'react-router-dom';
-
 
 // imports for the flags
 import frenchFlag from './../img/france_icon.png'
@@ -21,37 +19,17 @@ const Header = (props) => {
        const location = useLocation();
        const currentSection = location.pathname.slice(1) || "home"; // remove leading slash       
 
-
        const { theme, toggleTheme } = useTheme();
        const { language, toggleLanguage } = props;
-       const headerRef = useRef(null);
-
-       useEffect(() => {
-              const updateHeaderHeight = () => {
-                     props.setHeaderHeight(headerRef.current.offsetHeight);
-              };
-
-              updateHeaderHeight();
-              window.addEventListener('resize', updateHeaderHeight);
-
-              return () => {
-                     window.removeEventListener('resize', updateHeaderHeight);
-              };
-
-       }, [headerRef, props]);
 
        return (
-              <Disclosure as="nav" className={`w-full header`}>
+              <Disclosure as="nav" className={`w-full header transition`}>
                      {({ open, close }) => (
                             <>
                                    {/* Default header */}
 
-                                   <div ref={headerRef} className="hidden mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 sm:flex h-16 items-center justify-between">
+                                   <div className="hidden mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 sm:flex h-16 items-center justify-between">
                                           <div className="ml-6 space-x-4 navItems">
-                                                 <Link to="/home"
-                                                        className={currentSection === "home" ? 'rounded-md px-3 py-2 text-sm font-medium currentSection' : 'rounded-md px-3 py-2 text-sm font-medium notCurrentSection'}
-                                                 >{translations[language].home.title}
-                                                 </Link>
                                                  <Link to="/contact"
                                                         className={currentSection === "contact" ? 'rounded-md px-3 py-2 text-sm font-medium currentSection' : 'rounded-md px-3 py-2 text-sm font-medium notCurrentSection'}
                                                  >{translations[language].contact.title}
@@ -59,6 +37,10 @@ const Header = (props) => {
                                                  <Link to="/about"
                                                         className={currentSection === "about" ? 'rounded-md px-3 py-2 text-sm font-medium currentSection' : 'rounded-md px-3 py-2 text-sm font-medium notCurrentSection'}
                                                  >{translations[language].about.title}
+                                                 </Link>
+                                                 <Link to="/project"
+                                                        className={currentSection === "project" ? 'rounded-md px-3 py-2 text-sm font-medium currentSection' : 'rounded-md px-3 py-2 text-sm font-medium notCurrentSection'}
+                                                 >{translations[language].project.title}
                                                  </Link>
                                           </div>
                                           <div className="absolute left-1/2 transform -translate-x-1/2">
@@ -91,7 +73,7 @@ const Header = (props) => {
 
                                    {/* Mobile header */}
                                    <div className="sm:hidden">
-                                          <div ref={headerRef} className='flex flex-row h-16 items-center'>
+                                          <div className='flex flex-row h-16 items-center'>
                                                  <Disclosure.Button className="sm:hidden rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                                                         <span className="sr-only">Open main menu</span>
                                                         {open ? (
@@ -151,4 +133,4 @@ const Header = (props) => {
        )
 }
 
-export default withLanguage((Header));
+export default withLanguage(Header);

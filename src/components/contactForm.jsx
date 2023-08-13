@@ -61,7 +61,6 @@ const ContactForm = (props) => {
        if (error) return "An error has occurred: " + error.message;
 
        return (
-
               <div>
                      {fetchStatus === "success" &&
                             <div className="w-full flex justify-center d-flex content-start">

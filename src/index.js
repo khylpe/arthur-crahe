@@ -26,7 +26,7 @@ const MainContent = () => {
        // return <div><Maintenance /></div>
 
        return (
-              <div className='mt-6'>
+              <div>
                                    <Routes>
                                           <Route path="/about" element={<About />} />
                                           <Route path="/contact" element={<Contact />} />

@@ -25,9 +25,10 @@ const ContactForm = (props) => {
               let message = DOMPurify.sanitize(formData.get("message"));
               let firstName = DOMPurify.sanitize(formData.get("firstName"));
               let lastName = DOMPurify.sanitize(formData.get("lastName"));
-              let companyOrOrganizationOrSchool = DOMPurify.sanitize(formData.get("companyOrOrganizationOrSchool"));
-
-              fetch("https://crahe-arthur.com/api/sendContactForm.php", {
+              let companyOrOrganizationOrSchool = DOMPurify.sanitize(formData.get("companyOrOrganizationOrSchool"));   
+              
+              fetch("https://crahe-arthur.com/api/sendContactForm.php", { // Production purpose only !
+              // fetch("https://crahe-arthur.com/api/test/test_contactSent.php", { // Test purpose only ! Will only return a success state
                      method: "POST",
                      body: JSON.stringify({
                             mail: mail,

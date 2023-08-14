@@ -2,7 +2,7 @@
        "homepage": "https://crahe-arthur.com/",
        "description": "Bienvenue sur le site personnel d'Arthur CRAHÉ. Découvrez qui je suis, mon parcours et mon profil professionnel en tant que Concepteur Développeur d'applications et développeur en environnements web. N'hésitez pas à utiliser le formulaire de contact à votre disposition",
        "name": "arthur-crahe",
-       "version": "1.0.0",
+       "version": "1.0.1",
        "private": true,
        "dependencies": {
               "@googlemaps/js-api-loader": "^1.16.2",

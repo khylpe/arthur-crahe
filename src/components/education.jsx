@@ -14,6 +14,61 @@ const TimelineEducation = (props) => {
 
                      <Timeline className='mt-12'>
                             <Timeline.Item>
+                                   <Timeline.Point icon={HiCalendarDays} />
+                                   <Timeline.Content className='ml-2'>
+                                          <Timeline.Title className='text-2xl'>
+                                                 {translations[language].about.education.timeLine.third.diplomaTitle}
+                                          </Timeline.Title>
+                                          <Timeline.Time>
+                                                 {translations[language].about.education.timeLine.third.timeAndPlace}
+                                          </Timeline.Time>
+                                          <Timeline.Body className='mt-5'>
+                                                 {translations[language].about.education.timeLine.third.description}
+                                          </Timeline.Body>
+                                          <p className='mt-8 underline decoration-sky-500 underline-offset-4 decoration-2'>
+                                                 {translations[language].about.education.timeLine.third.experience}
+                                          </p>
+                                          <div className='mt-10'>
+                                                 <Link to="/project#bachelor" className="inline-flex items-center justify-center px-3 text-base font-medium text-gray-500 rounded-lg bg-gray-50 hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-white">
+                                                        <HiBriefcase className="h-14 w-14"></HiBriefcase>
+                                                        <span className="w-full ml-2">Some projects</span>
+                                                        <svg className="w-4 h-4 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                                               <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                                                        </svg>
+                                                 </Link>
+                                          </div>
+                                   </Timeline.Content>
+                            </Timeline.Item>
+
+                            <Timeline.Item>
+                                   <Timeline.Point icon={HiCalendarDays} />
+                                   <Timeline.Content className='ml-2'>
+                                          <Timeline.Title className='text-2xl'>
+                                                 {translations[language].about.education.timeLine.second.diplomaTitle}
+                                          </Timeline.Title>
+                                          <Timeline.Time>
+                                                 {translations[language].about.education.timeLine.second.timeAndPlace}
+                                          </Timeline.Time>
+                                          <Timeline.Body className='mt-5'>
+                                                 {translations[language].about.education.timeLine.second.description}
+                                          </Timeline.Body>
+
+                                          <p className='mt-8 underline decoration-sky-500 underline-offset-4 decoration-2'>
+                                                 {translations[language].about.education.timeLine.second.experience}
+                                          </p>
+
+                                          <div className='mt-10'>
+                                                 <Link to="/project#BTS" className="inline-flex items-center justify-center px-3 text-base font-medium text-gray-500 rounded-lg bg-gray-50 hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-white">
+                                                        <HiBriefcase className="h-14 w-14"></HiBriefcase>
+                                                        <span className="w-full ml-2">Some projects</span>
+                                                        <svg className="w-4 h-4 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                                               <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                                                        </svg>
+                                                 </Link>
+                                          </div>
+                                   </Timeline.Content>
+                            </Timeline.Item>
+                            <Timeline.Item>
                                    <div id="poutrain">
                                           <Timeline.Point icon={HiCalendarDays} />
                                           <Timeline.Content className='ml-2'>
@@ -58,60 +113,7 @@ const TimelineEducation = (props) => {
                                           </Timeline.Content>
                                    </div>
                             </Timeline.Item>
-                            <Timeline.Item>
-                                   <Timeline.Point icon={HiCalendarDays} />
-                                   <Timeline.Content className='ml-2'>
-                                          <Timeline.Title className='text-2xl'>
-                                                 {translations[language].about.education.timeLine.second.diplomaTitle}
-                                          </Timeline.Title>
-                                          <Timeline.Time>
-                                                 {translations[language].about.education.timeLine.second.timeAndPlace}
-                                          </Timeline.Time>
-                                          <Timeline.Body className='mt-5'>
-                                                 {translations[language].about.education.timeLine.second.description}
-                                          </Timeline.Body>
 
-                                          <p className='mt-8 underline decoration-sky-500 underline-offset-4 decoration-2'>
-                                                 {translations[language].about.education.timeLine.second.experience}
-                                          </p>
-
-                                          <div className='mt-10'>
-                                                 <Link to="/project#BTS" className="inline-flex items-center justify-center px-3 text-base font-medium text-gray-500 rounded-lg bg-gray-50 hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-white">
-                                                        <HiBriefcase className="h-14 w-14"></HiBriefcase>
-                                                        <span className="w-full ml-2">Some projects</span>
-                                                        <svg className="w-4 h-4 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                                               <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                                                        </svg>
-                                                 </Link>
-                                          </div>
-                                   </Timeline.Content>
-                            </Timeline.Item>
-                            <Timeline.Item>
-                                   <Timeline.Point icon={HiCalendarDays} />
-                                   <Timeline.Content className='ml-2'>
-                                          <Timeline.Title className='text-2xl'>
-                                                 {translations[language].about.education.timeLine.third.diplomaTitle}
-                                          </Timeline.Title>
-                                          <Timeline.Time>
-                                                 {translations[language].about.education.timeLine.third.timeAndPlace}
-                                          </Timeline.Time>
-                                          <Timeline.Body className='mt-5'>
-                                                 {translations[language].about.education.timeLine.third.description}
-                                          </Timeline.Body>
-                                          <p className='mt-8 underline decoration-sky-500 underline-offset-4 decoration-2'>
-                                                 {translations[language].about.education.timeLine.third.experience}
-                                          </p>
-                                          <div className='mt-10'>
-                                                 <Link to="/project#bachelor" className="inline-flex items-center justify-center px-3 text-base font-medium text-gray-500 rounded-lg bg-gray-50 hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-white">
-                                                        <HiBriefcase className="h-14 w-14"></HiBriefcase>
-                                                        <span className="w-full ml-2">Some projects</span>
-                                                        <svg className="w-4 h-4 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                                               <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                                                        </svg>
-                                                 </Link>
-                                          </div>
-                                   </Timeline.Content>
-                            </Timeline.Item>
                      </Timeline>
               </div>
        )

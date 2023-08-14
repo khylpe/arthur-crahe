@@ -97,16 +97,16 @@ const Header = (props) => {
                                           </div>
 
                                           <Disclosure.Panel className="smallHeader space-y-10 pb-3 pt-2 flex flex-col flex-wrap content-center justify-center h-screen w-screen top-0 flex-shrink-0 py-4 px-6 navItems">
-                                                 <Link to="/home" onClick={close} className={currentSection === "home" ? 'text-2xl rounded-md px-3 py-2 font-medium currentSection text-center' : 'text-center text-2xl rounded-md px-3 py-2 font-medium notCurrentSection'}>
-                                                        {translations[language].home.title}
-                                                 </Link>
-
-                                                 <Link to="/contact" onClick={close} className={currentSection === "contact" ? 'text-center text-2xl rounded-md px-3 py-2 font-medium currentSection' : 'text-center text-2xl rounded-md px-3 py-2 font-medium notCurrentSection'}>
+                                                 <Link to="/contact" onClick={close} className={currentSection === "contact" ? 'text-2xl rounded-md px-3 py-2 font-medium currentSection text-center' : 'text-center text-2xl rounded-md px-3 py-2 font-medium notCurrentSection'}>
                                                         {translations[language].contact.title}
                                                  </Link>
 
-                                                 <Link to="/about" onClick={close} className={currentSection === "about" ? 'text-center text-2xl rounded-md px-3 py-2 font-medium currentSection' : 'text-center text-2xl rounded-md px-3 py-2 font-medium notCurrentSection'}
-                                                 >{translations[language].about.title}
+                                                 <Link to="/about" onClick={close} className={currentSection === "about" ? 'text-center text-2xl rounded-md px-3 py-2 font-medium currentSection' : 'text-center text-2xl rounded-md px-3 py-2 font-medium notCurrentSection'}>
+                                                        {translations[language].about.title}
+                                                 </Link>
+
+                                                 <Link to="/project" onClick={close} className={currentSection === "project" ? 'text-center text-2xl rounded-md px-3 py-2 font-medium currentSection' : 'text-center text-2xl rounded-md px-3 py-2 font-medium notCurrentSection'}
+                                                 >{translations[language].project.title}
                                                  </Link>
 
                                                  <div className='text-center flex items-center justify-evenly'>

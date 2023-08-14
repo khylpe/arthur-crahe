@@ -110,6 +110,9 @@ export const translations = {
                             companyOrOrganizationOrSchool: "Entreprise, organisation ou école",
                             companyOrOrganizationOrSchoolPlaceholder: "Employé chez Google"
                      },
+                     socials: {
+                            title: "Réseaux sociaux",
+                     },
                      successMessageSent: "Votre message a été envoyé avec succès. Un récapitulatif vous a été transmis. Merci!",
                      loadingSendingMessage: "Envoi du message..."
               },
@@ -268,6 +271,9 @@ export const translations = {
                             lastName: "Last name",
                             companyOrOrganizationOrSchool: "Company, organization or school",
                             companyOrOrganizationOrSchoolPlaceholder: "Employe at Google"
+                     },
+                     socials: {
+                            title: "Socials",
                      },
                      successMessageSent: "Your message has been sent successfully. A summary has been sent to you. Thank you!",
                      loadingSendingMessage: "Sending message...",

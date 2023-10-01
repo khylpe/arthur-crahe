@@ -7,7 +7,7 @@ import blackLogo from './../img/black.png';
 import Socials from '../components/socials';
 
 const Home = (props) => {
-       const { theme, toggleTheme } = useTheme();
+       const { theme } = useTheme();
        const { language } = props;
 
        return (
@@ -27,7 +27,6 @@ const Home = (props) => {
                                    </div>
                             </div>
                      </div>
-
               </div>
        )
 };

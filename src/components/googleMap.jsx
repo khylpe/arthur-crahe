@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useMemo } from 'react';
 
 import { Loader } from "@googlemaps/js-api-loader";
 
@@ -19,7 +20,7 @@ const GoogleMap = (props) => {
        const navigate = useNavigate();
        const mapRef = useRef(null);
 
-       const theme = [
+       const theme = useMemo(() => ([
               {
                      "featureType": "all",
                      "elementType": "geometry.fill",
@@ -188,9 +189,9 @@ const GoogleMap = (props) => {
                             }
                      ]
               }
-       ]
+       ]), []);
 
-       const markersDetails = {
+       const markersDetails = useMemo(() => ({
               cesi: {
                      img: cesiIMG,
                      sourceLink: "https://www.google.com/url?sa=i&url=https%3A%2F%2Faix-en-provence.cesi.fr%2Ffr%2Factualites%2Fcesi-devoile-sa-nouvelle-identite%2F&psig=AOvVaw3cx7fH1sNn2k0Pwri-uYLh&ust=1691418799885000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCLD82pegyIADFQAAAAAdAAAAABAg",
@@ -245,9 +246,9 @@ const GoogleMap = (props) => {
                             lng: 6.21570154679287
                      }
               },
-       };
-
-       const centerOfTheMap = { lat: 44.09854259648287, lng: 5.816817404169226 }
+       }), []);
+       
+       const centerOfTheMap = useMemo(() => ({ lat: 44.09854259648287, lng: 5.816817404169226 }), []);
 
        useEffect(() => {
               const generateContent = (id) => {
@@ -336,7 +337,7 @@ const GoogleMap = (props) => {
                      });
 
               });
-       }, [language]);
+       }, [language, centerOfTheMap, markersDetails, theme, navigate]);
 
        return <div ref={mapRef} className='' style={{ width: '100%', height: '500px' }} />;
 }

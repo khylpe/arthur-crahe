@@ -1,6 +1,5 @@
 // about.jsx
 import React from 'react';
-import Card from '../components/card';
 import { withLanguage } from "../contexts/languageContext";
 import { translations } from '../translations';
 import TimelineEducation from '../components/education';

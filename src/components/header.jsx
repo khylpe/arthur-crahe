@@ -92,25 +92,20 @@ const Header = (props) => {
                                                                       alt="Arthur CRAHE logo"
                                                                />
                                                         </Link>
-
                                                  </div>
                                           </div>
 
                                           <Disclosure.Panel className="smallHeader space-y-10 pb-3 pt-2 flex flex-col flex-wrap content-center justify-center h-screen w-screen top-0 flex-shrink-0 py-4 px-6 navItems">
-                                                 <Link to="/contact" onClick={close}
-                                                        className={`text-center rounded-md px-3 py-2 text-2xl font-medium ${currentSection === "contact" ? 'currentSection' : 'notCurrentSection'}`}
-                                                 >
+                                                 <Link to="/contact" onClick={close} className={`text-center rounded-md px-3 py-2 text-2xl font-medium ${currentSection === "contact" ? 'currentSection' : 'notCurrentSection'}`}>
                                                         {translations[language].contact.title}
                                                  </Link>
 
-                                                 <Link to="/about" onClick={close}
-                                                        className={`text-center rounded-md px-3 py-2 text-2xl font-medium ${currentSection === "about" ? 'currentSection' : 'notCurrentSection'}`}
-                                                 >                                                        {translations[language].about.title}
+                                                 <Link to="/about" onClick={close} className={`text-center rounded-md px-3 py-2 text-2xl font-medium ${currentSection === "about" ? 'currentSection' : 'notCurrentSection'}`}>
+                                                        {translations[language].about.title}
                                                  </Link>
 
-                                                 <Link to="/project" onClick={close}
-                                                        className={`text-center rounded-md px-3 py-2 text-2xl font-medium ${currentSection === "project" ? 'currentSection' : 'notCurrentSection'}`}
-                                                 >{translations[language].project.title}
+                                                 <Link to="/project" onClick={close} className={`text-center rounded-md px-3 py-2 text-2xl font-medium ${currentSection === "project" ? 'currentSection' : 'notCurrentSection'}`}>
+                                                        {translations[language].project.title}
                                                  </Link>
 
                                                  <div className='text-center flex items-center justify-evenly'>

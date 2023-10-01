@@ -1,12 +1,8 @@
 // index.js
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ReactDOM from 'react-dom/client';
-
 import Modal from 'react-modal';
-
-
-
 import { ThemeProvider } from "./contexts/themeContext";
 import { LanguageProvider } from './contexts/languageContext';
 
@@ -31,14 +27,14 @@ const MainContent = () => {
 
        return (
               <div>
-                                   <Routes>
-                                          <Route path="/about" element={<About />} />
-                                          <Route path="/contact" element={<Contact />} />
-                                          <Route path="/project" element={<Project />} />
-                                          <Route path="/home" element={<Home />} />
-                                          <Route path="/" element={<Home />} />
-                                          <Route path="*" element={<Home />} />
-                                   </Routes>
+                     <Routes>
+                            <Route path="/about" element={<About />} />
+                            <Route path="/contact" element={<Contact />} />
+                            <Route path="/project" element={<Project />} />
+                            <Route path="/home" element={<Home />} />
+                            <Route path="/" element={<Home />} />
+                            <Route path="*" element={<Home />} />
+                     </Routes>
               </div>
        )
 };
@@ -49,9 +45,9 @@ const App = () => {
                      <ThemeProvider>
                             <LanguageProvider>
                                    <Router>
-                                   <Header  />
-                                   <MainContent />
-                                   <Footer />
+                                          <Header />
+                                          <MainContent />
+                                          <Footer />
                                    </Router>
                             </LanguageProvider>
                      </ThemeProvider>

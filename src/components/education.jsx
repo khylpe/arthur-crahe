@@ -92,7 +92,7 @@ const TimelineEducation = (props) => {
                                                  </p>
 
                                                  <div className="flex space-x-4 mt-10">
-                                                        <a href="https://www.lyceepoutrain.fr/"
+                                                        <a rel="noreferrer" href="https://www.lyceepoutrain.fr/"
                                                                className="inline-flex items-center justify-center px-3 text-base font-medium text-gray-500 rounded-lg bg-gray-50 hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700 dark:hover:text-white"
                                                                target='_blank'>
                                                                <HiAcademicCap className="h-14 w-14"></HiAcademicCap>

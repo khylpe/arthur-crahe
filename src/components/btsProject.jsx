@@ -6,7 +6,6 @@ import { XMarkIcon } from '@heroicons/react/24/outline'
 import { withLanguage } from "../contexts/languageContext";
 import { translations } from '../translations';
 
-
 // Logo images for tech stack
 import socketIOIMG from './../img/projects/bts/socketIO.png'
 import bootstrapIMG from './../img/projects/bts/bootstrap.png'
@@ -19,17 +18,16 @@ import zigbeeIMG from './../img/projects/bts/zigbee.png'
 import cppIMG from './../img/projects/bts/cpp.png'
 import sassIMG from './../img/projects/bts/sass.png'
 
+// Images for equizz presentation
 import createQuizzIMG from './../img/projects/bts/createQuizz.png'
 import displayQuestionIMG from './../img/projects/bts/displayQuestion.png'
 import resultsQuizzIMG from './../img/projects/bts/resultsQuizz.png'
 import resultsStudentIMG from './../img/projects/bts/resultsStudent.png'
 import waitingRoomIMG from './../img/projects/bts/waitingRoom.png'
-
 import overviewProjectIMG from './../img/projects/bts/overviewProject.png'
 
 const BtsProject = (props) => {
        const { language } = props;
-
        const [modalIsOpen, setModalIsOpen] = useState(false);
        const [currentImage, setCurrentImage] = useState('');
 
@@ -52,7 +50,6 @@ const BtsProject = (props) => {
                      height: '80vh', // Définir la hauteur à 80% de la hauteur de la vue
               },
        };
-
 
        return (
               <div>
@@ -138,10 +135,10 @@ const BtsProject = (props) => {
                                                  <div className='space-y-10'>
                                                         <div className='space-y-5'>
                                                                <p className='p-3'>
-                                                               {translations[language].project.categories.bts.equizz.presentation.createQCM.content}
+                                                                      {translations[language].project.categories.bts.equizz.presentation.createQCM.content}
                                                                </p>
                                                                <figure className="flex flex-col justify-center">
-                                                                      <img onClick={() => openModal(createQuizzIMG)} draggable="false" className="cursor-pointer h-96 object-contain" src={createQuizzIMG} alt= {translations[language].project.categories.bts.equizz.presentation.createQCM.imageCaption} />
+                                                                      <img onClick={() => openModal(createQuizzIMG)} draggable="false" className="cursor-pointer h-96 object-contain" src={createQuizzIMG} alt={translations[language].project.categories.bts.equizz.presentation.createQCM.imageCaption} />
                                                                       <figcaption className="text-center mt-2 text-lg text-gray-500 italic">{translations[language].project.categories.bts.equizz.presentation.createQCM.imageCaption}</figcaption>
                                                                </figure>
 
@@ -149,39 +146,39 @@ const BtsProject = (props) => {
 
                                                         <div className='space-y-5'>
                                                                <p className='p-3'>
-                                                               {translations[language].project.categories.bts.equizz.presentation.waitingRoom.content}
+                                                                      {translations[language].project.categories.bts.equizz.presentation.waitingRoom.content}
 
                                                                </p>
                                                                <figure className="flex flex-col justify-center">
-                                                                      <img onClick={() => openModal(waitingRoomIMG)} draggable="false" className="cursor-pointer h-96 object-contain" src={waitingRoomIMG} alt={translations[language].project.categories.bts.equizz.presentation.waitingRoom.imageCaption}/>
+                                                                      <img onClick={() => openModal(waitingRoomIMG)} draggable="false" className="cursor-pointer h-96 object-contain" src={waitingRoomIMG} alt={translations[language].project.categories.bts.equizz.presentation.waitingRoom.imageCaption} />
                                                                       <figcaption className="text-center mt-2 text-lg text-gray-500 italic"> {translations[language].project.categories.bts.equizz.presentation.waitingRoom.imageCaption}</figcaption>
                                                                </figure>
                                                         </div>
 
                                                         <div className='space-y-5'>
                                                                <p className='p-3'>
-                                                               {translations[language].project.categories.bts.equizz.presentation.displayQuestions.content}
+                                                                      {translations[language].project.categories.bts.equizz.presentation.displayQuestions.content}
                                                                </p>
 
                                                                <figure className="flex flex-col justify-center">
-                                                                      <img onClick={() => openModal(displayQuestionIMG)} draggable="false" className="cursor-pointer h-96 object-contain" src={displayQuestionIMG} alt={translations[language].project.categories.bts.equizz.presentation.displayQuestions.imageCaption}/>
+                                                                      <img onClick={() => openModal(displayQuestionIMG)} draggable="false" className="cursor-pointer h-96 object-contain" src={displayQuestionIMG} alt={translations[language].project.categories.bts.equizz.presentation.displayQuestions.imageCaption} />
                                                                       <figcaption className="text-center mt-2 text-lg text-gray-500 italic">{translations[language].project.categories.bts.equizz.presentation.displayQuestions.imageCaption}</figcaption>
                                                                </figure>
                                                         </div>
 
                                                         <div className='space-y-5'>
                                                                <p className='p-3'>
-                                                               {translations[language].project.categories.bts.equizz.presentation.quizzResults.content}
+                                                                      {translations[language].project.categories.bts.equizz.presentation.quizzResults.content}
                                                                </p>
                                                                <figure className="flex flex-col justify-center">
-                                                                      <img onClick={() => openModal(resultsQuizzIMG)} draggable="false" className="cursor-pointer h-96 object-contain" src={resultsQuizzIMG} alt={translations[language].project.categories.bts.equizz.presentation.quizzResults.imageCaption}/>
+                                                                      <img onClick={() => openModal(resultsQuizzIMG)} draggable="false" className="cursor-pointer h-96 object-contain" src={resultsQuizzIMG} alt={translations[language].project.categories.bts.equizz.presentation.quizzResults.imageCaption} />
                                                                       <figcaption className="text-center mt-2 text-lg text-gray-500 italic">{translations[language].project.categories.bts.equizz.presentation.quizzResults.imageCaption}</figcaption>
                                                                </figure>
                                                         </div>
 
                                                         <div className='space-y-5'>
                                                                <p className='p-3'>
-                                                               {translations[language].project.categories.bts.equizz.presentation.studentResults.content}
+                                                                      {translations[language].project.categories.bts.equizz.presentation.studentResults.content}
                                                                </p>
 
                                                                <figure onClick={() => openModal(resultsStudentIMG)} className="flex flex-col justify-center">
@@ -193,7 +190,6 @@ const BtsProject = (props) => {
                                           </div>
                                    </Accordion.Content>
                             </Accordion.Panel>
-
                      </Accordion>
 
                      <Modal
@@ -201,8 +197,8 @@ const BtsProject = (props) => {
                             isOpen={modalIsOpen}
                             onRequestClose={closeModal}
                             contentLabel="Example Modal"
-                            style={customStyles}
-                     >
+                            style={customStyles}>
+
                             {/* Icône X avec position absolue */}
                             <div className='absolute top-0 right-0 p-2'>
                                    <XMarkIcon onClick={closeModal} className="h-6 w-6 cursor-pointer" aria-hidden="true" />

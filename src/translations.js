@@ -172,7 +172,7 @@ export const translations = {
                                           }
                                    }
                             },
-                            bachelor: {   
+                            bachelor: {
                                    title: "Projets du Bachelor",
                             },
                      },
@@ -343,7 +343,7 @@ export const translations = {
                                           }
                                    }
                             },
-                            bachelor: {   
+                            bachelor: {
                                    title: "Bachelor's degree projects",
                             },
                      }

@@ -10,7 +10,6 @@ const Contact = (props) => {
        return (
               <div className='min-h-screen mb-36'>
                      <ContactForm></ContactForm>
-
                      <div className='mt-10 container'>
                             <Title title={translations[language].contact.socials.title}></Title>
                             <div className="mt-8">

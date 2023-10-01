@@ -3,6 +3,7 @@ import { withLanguage } from "./../contexts/languageContext";
 import { translations } from "./../translations";
 import centerDivIMG from './../img/centerDiv.png'
 import ComingSoon from "./../components/comingSoon"
+import BtsProject from '../components/btsProject';
 
 const Project = (props) => {
        const { language } = props;
@@ -28,21 +29,20 @@ const Project = (props) => {
                      </div>
 
                      <div className="space-y-8 mb-52">
-                            <div id="personnal" className="mt-52 space-y-5">
-                                   <Title title={translations[language].project.subtitle.personnal}></Title>
+
+                            <div id="personal" className="mt-52 space-y-5">
+                                   <Title title={translations[language].project.categories.personal.title}></Title>
                                    <ComingSoon></ComingSoon>
                             </div>
-                            <div id="baccalaureat" className="space-y-5">
-                                   <Title title={translations[language].project.subtitle.baccalaureat}></Title>
-                                   <ComingSoon></ComingSoon>
-                            </div>
-                            <div id="BTS" className="space-y-5">
-                                   <Title title={translations[language].project.subtitle.bts}></Title>
-                                   <ComingSoon></ComingSoon>
-                            </div>
+
                             <div id="bachelor" className="space-y-5">
-                                   <Title title={translations[language].project.subtitle.bachelor}></Title>
+                                   <Title title={translations[language].project.categories.bachelor.title}></Title>
                                    <ComingSoon></ComingSoon>
+                            </div>
+
+                            <div id="BTS" className="space-y-5">
+                                   <Title title={translations[language].project.categories.bts.title}></Title>
+                                   <BtsProject></BtsProject>
                             </div>
                      </div>
               </div>

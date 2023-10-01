@@ -28,18 +28,18 @@ const Header = (props) => {
                             <>
                                    {/* Default header */}
 
-                                   <div className="hidden mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 sm:flex h-16 items-center justify-between">
-                                          <div className="ml-6 space-x-4 navItems">
+                                   <div className="hidden mx-auto max-w-7xl md:px-3 md:flex h-16 items-center justify-between">
+                                          <div className="space-x-4 navItems">
                                                  <Link to="/contact"
-                                                        className={currentSection === "contact" ? 'rounded-md px-3 py-2 text-sm font-medium currentSection' : 'rounded-md px-3 py-2 text-sm font-medium notCurrentSection'}
+                                                        className={`rounded-md px-3 py-2 text-sm font-medium ${currentSection === "contact" ? 'currentSection' : 'notCurrentSection'}`}
                                                  >{translations[language].contact.title}
                                                  </Link>
                                                  <Link to="/about"
-                                                        className={currentSection === "about" ? 'rounded-md px-3 py-2 text-sm font-medium currentSection' : 'rounded-md px-3 py-2 text-sm font-medium notCurrentSection'}
+                                                        className={`rounded-md px-3 py-2 text-sm font-medium ${currentSection === "about" ? 'currentSection' : 'notCurrentSection'}`}
                                                  >{translations[language].about.title}
                                                  </Link>
                                                  <Link to="/project"
-                                                        className={currentSection === "project" ? 'rounded-md px-3 py-2 text-sm font-medium currentSection' : 'rounded-md px-3 py-2 text-sm font-medium notCurrentSection'}
+                                                        className={`rounded-md px-3 py-2 text-sm font-medium ${currentSection === "project" ? 'currentSection' : 'notCurrentSection'}`}
                                                  >{translations[language].project.title}
                                                  </Link>
                                           </div>
@@ -53,7 +53,7 @@ const Header = (props) => {
                                                         />
                                                  </Link>
                                           </div>
-                                          <div className="hidden sm:flex absolute inset-y-0 right-0  items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                                          <div className="hidden md:flex absolute inset-y-0 right-0  items-center pr-2 md:static md:inset-auto md:ml-6 md:pr-0">
                                                  <button onClick={toggleTheme}>
                                                         <span className='material-icons text-2xl p-1'>
                                                                {theme === 'light' ? 'dark_mode' : 'light_mode'}
@@ -72,9 +72,9 @@ const Header = (props) => {
                                    </div>
 
                                    {/* Mobile header */}
-                                   <div className="sm:hidden">
+                                   <div className="md:hidden">
                                           <div className='flex flex-row h-16 items-center'>
-                                                 <Disclosure.Button className="sm:hidden rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                                                 <Disclosure.Button className="md:hidden rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                                                         <span className="sr-only">Open main menu</span>
                                                         {open ? (
                                                                <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
@@ -97,15 +97,19 @@ const Header = (props) => {
                                           </div>
 
                                           <Disclosure.Panel className="smallHeader space-y-10 pb-3 pt-2 flex flex-col flex-wrap content-center justify-center h-screen w-screen top-0 flex-shrink-0 py-4 px-6 navItems">
-                                                 <Link to="/contact" onClick={close} className={currentSection === "contact" ? 'text-2xl rounded-md px-3 py-2 font-medium currentSection text-center' : 'text-center text-2xl rounded-md px-3 py-2 font-medium notCurrentSection'}>
+                                                 <Link to="/contact" onClick={close}
+                                                        className={`text-center rounded-md px-3 py-2 text-2xl font-medium ${currentSection === "contact" ? 'currentSection' : 'notCurrentSection'}`}
+                                                 >
                                                         {translations[language].contact.title}
                                                  </Link>
 
-                                                 <Link to="/about" onClick={close} className={currentSection === "about" ? 'text-center text-2xl rounded-md px-3 py-2 font-medium currentSection' : 'text-center text-2xl rounded-md px-3 py-2 font-medium notCurrentSection'}>
-                                                        {translations[language].about.title}
+                                                 <Link to="/about" onClick={close}
+                                                        className={`text-center rounded-md px-3 py-2 text-2xl font-medium ${currentSection === "about" ? 'currentSection' : 'notCurrentSection'}`}
+                                                 >                                                        {translations[language].about.title}
                                                  </Link>
 
-                                                 <Link to="/project" onClick={close} className={currentSection === "project" ? 'text-center text-2xl rounded-md px-3 py-2 font-medium currentSection' : 'text-center text-2xl rounded-md px-3 py-2 font-medium notCurrentSection'}
+                                                 <Link to="/project" onClick={close}
+                                                        className={`text-center rounded-md px-3 py-2 text-2xl font-medium ${currentSection === "project" ? 'currentSection' : 'notCurrentSection'}`}
                                                  >{translations[language].project.title}
                                                  </Link>
 

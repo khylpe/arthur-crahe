@@ -3,6 +3,10 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ReactDOM from 'react-dom/client';
 
+import Modal from 'react-modal';
+
+
+
 import { ThemeProvider } from "./contexts/themeContext";
 import { LanguageProvider } from './contexts/languageContext';
 
@@ -56,3 +60,5 @@ const App = () => {
 }
 
 root.render(<App />);
+Modal.setAppElement('#root');
+

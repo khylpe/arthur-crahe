@@ -9,11 +9,8 @@ git clone https://github.com/khylpe/arthur-crahe
 ```
 cd arthur-crahe
 ```
-### Install dependencies
+### Install dependencies and start
 ```
-npm install react
-npm install -D tailwindcss
-npm install flowbite flowbite-react
-npm install postcss
-npm install autoprefixer
+npm i
+npm start
 ```

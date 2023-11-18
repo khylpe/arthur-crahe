@@ -8,7 +8,7 @@ import BtsProject from '../components/btsProject';
 const Project = (props) => {
        const { language } = props;
        return (
-              <div className='mt-5 container'>
+              <div className='mt-10 container'>
                      <div className="text-center">
                             <h1 className="text-5xl font-extrabold leading-none mb-4 border-b-4 inline-block bg-dark-secondary-color px-6 py-3 transform rotate-2 shadow-lg">
                                    {translations[language].project.pageTitle}
@@ -29,7 +29,6 @@ const Project = (props) => {
                      </div>
 
                      <div className="space-y-8 mb-52">
-
                             <div id="personal" className="mt-52 space-y-5">
                                    <Title title={translations[language].project.categories.personal.title}></Title>
                                    <ComingSoon></ComingSoon>

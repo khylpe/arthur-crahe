@@ -1,10 +1,13 @@
-import { Accordion } from 'flowbite-react';
+import { Accordion, Tooltip } from 'flowbite-react';
 import Modal from 'react-modal';
 import { useState } from 'react';
 import { XMarkIcon } from '@heroicons/react/24/outline'
 
 import { withLanguage } from "../contexts/languageContext";
 import { translations } from '../translations';
+
+import { MdOutlinePushPin } from "react-icons/md";
+import { FaGithub, FaFilePdf } from "react-icons/fa";
 
 // Logo images for tech stack
 import socketIOIMG from './../img/projects/bts/socketIO.png'
@@ -65,16 +68,44 @@ const BtsProject = (props) => {
                                           <span style={{ fontFamily: 'Rubik Mono One, sans-serif' }} className="text-cyan-500 text-4xl mr-3">Z</span>
                                    </Accordion.Title>
                                    <Accordion.Content>
+                                          {/* Pinned content */}
+
+                                          <div className='space-y-5'>
+                                                 <h1 className='text-4xl'><MdOutlinePushPin size={"3rem"} /></h1>
+                                                 <div className='flex flex-row justify-around'>
+                                                        <Tooltip content="khylpe/E-Quizz">
+                                                               <a href="https://github.com/khylpe/E-Quizz" target="_blank" rel="noopener noreferrer">
+                                                                      <FaGithub size={"6rem"} />
+                                                               </a>
+                                                        </Tooltip>
+
+                                                        <Tooltip content="Dossier technique E-Quizz - BTS SN Vauvenargues">
+                                                               <a href="https://crahe-arthur.com/public_files/websites/crahe-arthur/projects/bts/equizz/Dossier%20technique%20E-Quizz%20-%20BTS%20SN%20Vauvenargues%202023%20-%20Censored_biff%C3%A9.pdf" target="_blank" rel="noopener noreferrer">
+                                                                      <FaFilePdf size={"6rem"} />
+                                                               </a>
+                                                        </Tooltip>
+                                                 </div>
+                                          </div>
+                                          {/* Divider */}
+
+                                          <div className="inline-flex items-center justify-center w-full">
+                                                 <hr className="container my-8 bg-gray-200 border-0 dark:bg-gray-700 h-1"></hr>
+                                          </div>
+
+                                          {/* Introduction */}
                                           <div className='space-y-5'>
                                                  <h1 className='text-4xl'>{translations[language].project.categories.bts.equizz.introduction.title}</h1>
                                                  <p className='text-justify px-3'>
                                                         {translations[language].project.categories.bts.equizz.introduction.content}
                                                  </p>
                                           </div>
+
+                                          {/* Divider */}
                                           <div className="inline-flex items-center justify-center w-full">
                                                  <hr className="container my-8 bg-gray-200 border-0 dark:bg-gray-700 h-1"></hr>
                                           </div>
 
+                                          {/* Features */}
                                           <div className='space-y-5'>
                                                  <h1 className='text-4xl'>{translations[language].project.categories.bts.equizz.features.title}</h1>
                                                  <div>
@@ -86,50 +117,12 @@ const BtsProject = (props) => {
                                                  </div>
                                           </div>
 
+                                          {/* Divider */}
                                           <div className="inline-flex items-center justify-center w-full">
                                                  <hr className="container my-8 bg-gray-200 border-0 dark:bg-gray-700 h-1"></hr>
                                           </div>
 
-                                          <div className='space-y-5'>
-                                                 <h1 className='text-4xl'>Tech stack</h1>
-                                                 <div className="space-y-3 sm:space-x-5 sm:space-y-0 sm:flex grid grid-cols-2 justify-items-center sm:flex-wrap sm:flex-row mt-5 justify-around px-3">
-                                                        <img draggable="false" className='h-16 object-contain' src={javascriptIMG} alt="JavaScript logo" />
-                                                        <img draggable="false" className='h-16 object-contain' src={nodejsIMG} alt="nodeJS logo" />
-                                                        <img draggable="false" className='h-16 object-contain' src={expressjsIMG} alt="expressJS logo" />
-                                                        <img draggable="false" className='h-16 object-contain' src={socketIOIMG} alt="socketIO logo" />
-                                                        <img draggable="false" className='h-16 object-contain' src={sassIMG} alt="bootstrap logo" />
-                                                        <img draggable="false" className='h-16 object-contain' src={bootstrapIMG} alt="bootstrap logo" />
-                                                        <img draggable="false" className='h-16 object-contain' src={phpIMG} alt="PHP logo" />
-                                                        <img draggable="false" className='h-16 object-contain' src={mysqlIMG} alt="MySQL logo" />
-                                                        <img draggable="false" className='h-16 object-contain' src={zigbeeIMG} alt="Zigbee logo" />
-                                                        <img draggable="false" className='h-16 object-contain' src={cppIMG} alt="Zigbee logo" />
-                                                 </div>
-                                          </div>
-
-                                          <div className="inline-flex items-center justify-center w-full">
-                                                 <hr className="container my-8 bg-gray-200 border-0 dark:bg-gray-700 h-1"></hr>
-                                          </div>
-
-                                          <div className='space-y-5'>
-                                                 <h1 className='text-4xl'>{translations[language].project.categories.bts.equizz.technicalDetails.title}</h1>
-                                                 <div>
-                                                        <p className='text-justify px-3'>
-                                                               {translations[language].project.categories.bts.equizz.technicalDetails.content}
-                                                        </p>
-                                                        <div >
-                                                               <figure className="flex flex-col justify-center">
-                                                                      <img onClick={() => openModal(overviewProjectIMG)} draggable="false" className="cursor-pointer h-96 object-contain" src={overviewProjectIMG} alt="overview of the E-QUIZZ project" />
-                                                                      <figcaption className="text-center mt-2 text-lg text-gray-500 italic">{translations[language].project.categories.bts.equizz.technicalDetails.imageCaption}</figcaption>
-                                                               </figure>
-                                                        </div>
-                                                 </div>
-
-                                          </div>
-
-                                          <div className="inline-flex items-center justify-center w-full">
-                                                 <hr className="container my-8 bg-gray-200 border-0 dark:bg-gray-700 h-1"></hr>
-                                          </div>
-
+                                          {/* Presentation */}
                                           <div className='space-y-5'>
                                                  <h1 className='text-4xl'> {translations[language].project.categories.bts.equizz.presentation.title}</h1>
                                                  <div className='space-y-10'>
@@ -188,6 +181,51 @@ const BtsProject = (props) => {
                                                         </div>
                                                  </div>
                                           </div>
+
+                                          {/* Divider */}
+                                          <div className="inline-flex items-center justify-center w-full">
+                                                 <hr className="container my-8 bg-gray-200 border-0 dark:bg-gray-700 h-1"></hr>
+                                          </div>
+
+                                          {/* Tech stack */}
+                                          <div className='space-y-5'>
+                                                 <h1 className='text-4xl'>Tech stack</h1>
+                                                 <div className="space-y-3 sm:space-x-5 sm:space-y-0 sm:flex grid grid-cols-2 justify-items-center sm:flex-wrap sm:flex-row mt-5 justify-around px-3">
+                                                        <img draggable="false" className='h-16 object-contain' src={javascriptIMG} alt="JavaScript logo" />
+                                                        <img draggable="false" className='h-16 object-contain' src={nodejsIMG} alt="nodeJS logo" />
+                                                        <img draggable="false" className='h-16 object-contain' src={expressjsIMG} alt="expressJS logo" />
+                                                        <img draggable="false" className='h-16 object-contain' src={socketIOIMG} alt="socketIO logo" />
+                                                        <img draggable="false" className='h-16 object-contain' src={sassIMG} alt="bootstrap logo" />
+                                                        <img draggable="false" className='h-16 object-contain' src={bootstrapIMG} alt="bootstrap logo" />
+                                                        <img draggable="false" className='h-16 object-contain' src={phpIMG} alt="PHP logo" />
+                                                        <img draggable="false" className='h-16 object-contain' src={mysqlIMG} alt="MySQL logo" />
+                                                        <img draggable="false" className='h-16 object-contain' src={zigbeeIMG} alt="Zigbee logo" />
+                                                        <img draggable="false" className='h-16 object-contain' src={cppIMG} alt="Zigbee logo" />
+                                                 </div>
+                                          </div>
+
+                                          {/* Divider */}
+                                          <div className="inline-flex items-center justify-center w-full">
+                                                 <hr className="container my-8 bg-gray-200 border-0 dark:bg-gray-700 h-1"></hr>
+                                          </div>
+
+                                          {/* Technical details */}
+                                          <div className='space-y-5'>
+                                                 <h1 className='text-4xl'>{translations[language].project.categories.bts.equizz.technicalDetails.title}</h1>
+                                                 <div>
+                                                        <p className='text-justify px-3'>
+                                                               {translations[language].project.categories.bts.equizz.technicalDetails.content}
+                                                        </p>
+                                                        <div >
+                                                               <figure className="flex flex-col justify-center">
+                                                                      <img onClick={() => openModal(overviewProjectIMG)} draggable="false" className="cursor-pointer h-96 object-contain" src={overviewProjectIMG} alt="overview of the E-QUIZZ project" />
+                                                                      <figcaption className="text-center mt-2 text-lg text-gray-500 italic">{translations[language].project.categories.bts.equizz.technicalDetails.imageCaption}</figcaption>
+                                                               </figure>
+                                                        </div>
+                                                 </div>
+                                          </div>
+
+
                                    </Accordion.Content>
                             </Accordion.Panel>
                      </Accordion>

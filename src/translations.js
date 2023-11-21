@@ -188,7 +188,6 @@ export const translations = {
               general: {
                      comingSoon: "Bientôt disponible",
               }
-
        },
 
        en: {

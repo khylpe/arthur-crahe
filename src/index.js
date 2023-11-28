@@ -28,11 +28,10 @@ const MainContent = () => {
        return (
               <div>
                      <Routes>
+                            <Route path="/" element={<Home />} />
                             <Route path="/about" element={<About />} />
                             <Route path="/contact" element={<Contact />} />
                             <Route path="/project" element={<Project />} />
-                            <Route path="/home" element={<Home />} />
-                            <Route path="/" element={<Home />} />
                             <Route path="*" element={<Home />} />
                      </Routes>
               </div>
@@ -45,9 +44,13 @@ const App = () => {
                      <ThemeProvider>
                             <LanguageProvider>
                                    <Router>
-                                          <Header />
-                                          <MainContent />
-                                          <Footer />
+                                          <div className='min-h-screen flex flex-col justify-between overflow-x-hidden'>
+                                                 <Header />
+                                                 <div className='flex flex-col justify-center h-full'>
+                                                        <MainContent />
+                                                 </div>
+                                                 <Footer />
+                                          </div>
                                    </Router>
                             </LanguageProvider>
                      </ThemeProvider>

@@ -247,7 +247,7 @@ const GoogleMap = (props) => {
                      }
               },
        }), []);
-       
+
        const centerOfTheMap = useMemo(() => ({ lat: 44.09854259648287, lng: 5.816817404169226 }), []);
 
        useEffect(() => {
@@ -273,14 +273,16 @@ const GoogleMap = (props) => {
                                    <p class="text-gray-700 w-64">
                                           ${translation.description}
                                    </p>
-                                   <a
-                                          id="more-details-link"
-                                          class="inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
-                                                 ${translations[language].about.map.markers.more}
-                                   </a>
+                                   
                             </div>`);
               };
 
+              {/* <a
+                                          id="more-details-link"
+                                          class="inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                                                 ${translations[language].about.map.markers.more}
+                                   </a> */
+              }
               const generateAriaLabel = (id) => {
                      const translation = translations[language].about.map.markers[id];
                      const ariaLabel = translation.name;

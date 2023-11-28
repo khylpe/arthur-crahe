@@ -11,12 +11,11 @@ const Home = (props) => {
        const { language } = props;
 
        return (
-              <div className='min-h-screen mb-12 sm:mb-0'>
-                     <div className='flex flex-col items-center justify-center sm:mt-32 mt-20'>
+                     <div className='flex flex-col items-center justify-center py-8 sm:py-0'>
                             <div className='flex flex-col items-center justify-center'>
                                    <img
                                           draggable="false"
-                                          className="block h-32 w-auto"
+                                          className="w-auto hidden sm:block h-36"
                                           src={theme === 'light' ? blackLogo : whiteLogo}
                                           alt="Arthur CRAHE logo"
                                    />
@@ -24,7 +23,6 @@ const Home = (props) => {
                                    <h2 className='text-2xl font-bold text-center mt-5'>CESI | {translations[language].home.alternance} | {translations[language].home.job}</h2>
                                    <div className="mt-8">
                                           <Socials></Socials>
-                                   </div>
                             </div>
                      </div>
               </div>

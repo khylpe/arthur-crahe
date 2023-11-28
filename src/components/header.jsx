@@ -72,60 +72,59 @@ const Header = (props) => {
                                    </div>
 
                                    {/* Mobile header */}
-                                   <div className="md:hidden">
-                                          <div className='flex flex-row h-16 items-center'>
-                                                 <Disclosure.Button className="md:hidden rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
-                                                        <span className="sr-only">Open main menu</span>
-                                                        {open ? (
-                                                               <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
-                                                        ) : (
-                                                               <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
-                                                        )}
-                                                 </Disclosure.Button>
+                                   <div className='md:hidden flex flex-row h-16 items-center'>
+                                          <Disclosure.Button className="md:hidden rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                                                 <span className="sr-only">Open main menu</span>
+                                                 {open ? (
+                                                        <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
+                                                 ) : (
+                                                        <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
+                                                 )}
+                                          </Disclosure.Button>
 
-                                                 <div className="absolute left-1/2 transform -translate-x-1/2">
-                                                        <Link to="/home">
-                                                               <img
-                                                                      draggable="false"
-                                                                      className="block h-8 w-auto"
-                                                                      src={theme === 'light' ? logoBlack : logoWhite}
-                                                                      alt="Arthur CRAHE logo"
-                                                               />
-                                                        </Link>
-                                                 </div>
+                                          <div className="absolute left-1/2 transform -translate-x-1/2">
+                                                 <Link to="/home">
+                                                        <img
+                                                               draggable="false"
+                                                               className="block h-8 w-auto"
+                                                               src={theme === 'light' ? logoBlack : logoWhite}
+                                                               alt="Arthur CRAHE logo"
+                                                        />
+                                                 </Link>
                                           </div>
-
-                                          <Disclosure.Panel className="smallHeader space-y-10 pb-3 pt-2 flex flex-col flex-wrap content-center justify-center h-screen w-screen top-0 flex-shrink-0 py-4 px-6 navItems">
-                                                 <Link to="/contact" onClick={close} className={`text-center rounded-md px-3 py-2 text-2xl font-medium ${currentSection === "contact" ? 'currentSection' : 'notCurrentSection'}`}>
-                                                        {translations[language].contact.title}
-                                                 </Link>
-
-                                                 <Link to="/about" onClick={close} className={`text-center rounded-md px-3 py-2 text-2xl font-medium ${currentSection === "about" ? 'currentSection' : 'notCurrentSection'}`}>
-                                                        {translations[language].about.title}
-                                                 </Link>
-
-                                                 <Link to="/project" onClick={close} className={`text-center rounded-md px-3 py-2 text-2xl font-medium ${currentSection === "project" ? 'currentSection' : 'notCurrentSection'}`}>
-                                                        {translations[language].project.title}
-                                                 </Link>
-
-                                                 <div className='text-center flex items-center justify-evenly'>
-                                                        <button onClick={toggleTheme}>
-                                                               <span className='material-icons text-4xl p-1'>
-                                                                      {theme === 'light' ? 'dark_mode' : 'light_mode'}
-                                                               </span>
-                                                        </button>
-                                                        <button className="ml-3">
-                                                               <img
-                                                                      draggable="false"
-                                                                      onClick={toggleLanguage}
-                                                                      className="h-10 w-10"
-                                                                      src={language === 'fr' ? UKFlag : frenchFlag}
-                                                                      alt="Current language flag"
-                                                               />
-                                                        </button>
-                                                 </div>
-                                          </Disclosure.Panel>
                                    </div>
+
+                                   {/* navigation menu */}
+                                   <Disclosure.Panel className="smallHeader space-y-10 flex flex-col flex-wrap content-center justify-center h-screen w-screen navItems pb-20">
+                                          <Link to="/contact" onClick={close} className={`text-center rounded-md px-3 py-2 text-2xl font-medium ${currentSection === "contact" ? 'currentSection' : 'notCurrentSection'}`}>
+                                                 {translations[language].contact.title}
+                                          </Link>
+
+                                          <Link to="/about" onClick={close} className={`text-center rounded-md px-3 py-2 text-2xl font-medium ${currentSection === "about" ? 'currentSection' : 'notCurrentSection'}`}>
+                                                 {translations[language].about.title}
+                                          </Link>
+
+                                          <Link to="/project" onClick={close} className={`text-center rounded-md px-3 py-2 text-2xl font-medium ${currentSection === "project" ? 'currentSection' : 'notCurrentSection'}`}>
+                                                 {translations[language].project.title}
+                                          </Link>
+
+                                          <div className='text-center flex items-center justify-evenly'>
+                                                 <button onClick={toggleTheme}>
+                                                        <span className='material-icons text-4xl p-1'>
+                                                               {theme === 'light' ? 'dark_mode' : 'light_mode'}
+                                                        </span>
+                                                 </button>
+                                                 <button className="ml-3">
+                                                        <img
+                                                               draggable="false"
+                                                               onClick={toggleLanguage}
+                                                               className="h-10 w-10"
+                                                               src={language === 'fr' ? UKFlag : frenchFlag}
+                                                               alt="Current language flag"
+                                                        />
+                                                 </button>
+                                          </div>
+                                   </Disclosure.Panel>
                             </>
                      )}
               </Disclosure>

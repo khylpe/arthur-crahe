@@ -2,7 +2,7 @@
     
 <div align="center">
   <a  href="https://crahe-arthur.com/">
-      <img width="20%" style="margin-bottom:50;" src="https://crahe-arthur.com/public_img/for_github/logo.png" alt="Arthur CRAHÉ logo" />
+      <img width="20%" style="margin-bottom:50;" src="https://crahe-arthur.com/public_files/img/logo.png" alt="Arthur CRAHÉ logo" />
   </a>
 </div>
 

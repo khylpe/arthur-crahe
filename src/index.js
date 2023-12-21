@@ -17,13 +17,14 @@ import About from './pages/about';
 import Maintenance from './pages/maintenance';
 import Project from './pages/projects'
 
+// Layout
 import Header from './components/header';
 import Footer from './components/footer';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 const MainContent = () => {
-       // return <div><Maintenance /></div>
+       return <div><Maintenance /></div>
 
        return (
               <div>

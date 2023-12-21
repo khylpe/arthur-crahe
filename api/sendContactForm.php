@@ -6,7 +6,7 @@ ini_set('log_errors', '1');
 ini_set('error_log', './../sendContactFormErrorLogs.log');
 
 // accept cross origin
-header("Access-Control-Allow-Origin: https://crahe-arthur.com");
+header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: Content-Type");
 header("Access-Control-Allow-Methods: POST");
 

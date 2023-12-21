@@ -20,7 +20,7 @@ jobs:
 
       - name: Executing remote SSH commands
         run: |
-          ssh -o StrictHostKeyChecking=no username@yourserverip << EOF
+          ssh -o StrictHostKeyChecking=no debian@51.77.214.64 << EOF
             cd /var/www/html/arthur-crahe
             sudo git pull
             sudo npm run build

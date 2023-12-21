@@ -24,7 +24,7 @@ import Footer from './components/footer';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 const MainContent = () => {
-       return <div><Maintenance /></div>
+       // return <div><Maintenance /></div>
 
        return (
               <div>

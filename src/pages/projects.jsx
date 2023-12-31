@@ -19,10 +19,10 @@ const Project = (props) => {
                             </p>
                      </div>
 
-                     <div className='mt-32 text-center'>
+                     <div className='mt-32 text-center flex flex-col'>
                             <Title title={translations[language].project.preview.title}></Title>
                             <div className="inline-block mt-20 blur-2xl hover:blur-none">
-                                   <img src={centerDivIMG} alt="centerDiv" className="w-2/3 mt-10 mx-auto"></img>
+                                   <img src={centerDivIMG} alt="centerDiv" className="w-2/5 mt-10 mx-auto"></img>
                                    <span className='underline text-lg decoration-sky-500 decoration-2 underline-offset-4'>{translations[language].project.preview.joke}</span>
                             </div>
                             <span className='underline decoration-pink-500 underline-offset-4 decoration-2'>{translations[language].project.preview.hover}</span>

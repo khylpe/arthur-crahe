@@ -129,7 +129,27 @@ export const translations = {
                      categories: {
                             personal: {
                                    title: "Projets personnels",
-
+                                   notes: {
+                                          introduction: {
+                                                 content: `"Notes" est un projet personnel en développement web qui illustre l'engagement envers l'exploration et la maîtrise des technologies de pointe. Ce projet représente une démarche d'apprentissage et d'application pratique de divers outils innovants dans le domaine du développement web. Pour la partie front-end du projet "Notes", Vue a été choisi pour sa réactivité et sa capacité à créer des interfaces utilisateurs interactives, offrant ainsi une expérience web dynamique et captivante. En ce qui concerne la gestion de l'authentification et la sécurité des sessions des utilisateurs, le projet intègre Firebase Auth, reconnu pour sa fiabilité et sa simplicité d'utilisation. Pour la base de données, Cloud Firestore est choisi pour sa flexibilité et sa capacité à évoluer, fournissant une solution robuste et adaptable pour le stockage de données.`,
+                                                 title: "Introduction",
+                                          },
+                                          features: {
+                                                 title: "Fonctionnalités",
+                                                 contentList: ["Créer un compte avec un email ou un provider (Google, GitHub)", "Se connecter avec un mail ou un provider", "Créer une note", "Créer un tag", "Consulter ses notes", "Modifier une note", "Modifier un tag", "Filtrer les notes", "Archiver une note", "Supprimer une note", "Supprimer un tag"]
+                                          },
+                                          presentation: {
+                                                 title: "Présentation",
+                                                 login: {
+                                                        content: "L'utilisateur peut se connecter avec un email ou un provider (Google, GitHub).",
+                                                        imageCaption: "Page de connexion"
+                                                 },
+                                                 mainPage: {
+                                                        content: "Page principale permettant la création de notes et de tags, ainsi que la consultation des notes, le filtrage et la navigation dans les différents dossiers ou tags.",
+                                                        imageCaption: "Page principale"
+                                                 }
+                                          }
+                                   }
                             },
                             bts: {
                                    title: "Projet du Brevet de Technicien Supérieur",
@@ -299,7 +319,28 @@ export const translations = {
                      description: "Explore my educational journey, organized by years and school levels. Each category bears witness to innovation and versatility across a diverse range of projects. Together, they form a chronicle of learning and growth, reflecting a passion for technology and creation. Delve into these categories to see how each stage has shaped my path.",
                      categories: {
                             personal: {
-                                   title: "Personal Projects",
+                                   title: "Personal projects",
+                                   notes: {
+                                          introduction: {
+                                                 content: `"Notes" is a personal web development project that illustrates a commitment to exploring and mastering cutting-edge technologies. This project represents a journey of learning and practical application of various innovative tools in the field of web development. For the front-end part of the "Notes" project, Vue was chosen for its reactivity and ability to create interactive user interfaces, thus offering a dynamic and engaging web experience. As for the management of authentication and user session security, the project integrates Firebase Auth, known for its reliability and ease of use. For the database, Cloud Firestore is selected for its flexibility and scalability, providing a robust and adaptable solution for data storage.`,
+                                                 title: "Introduction",
+                                          },
+                                          features: {
+                                                 title: "Features",
+                                                 contentList: ["Create an account with an email or a provider (Google, GitHub)", "Log in with an email or a provider", "Create a note", "Create a tag", "View your notes", "Edit a note", "Edit a tag", "Filter notes", "Archive a note", "Delete a note", "Delete a tag"]
+                                          },
+                                          presentation: {
+                                                 title: "Presentation",
+                                                 login: {
+                                                        content: "The user can log in with an email or a provider (Google, GitHub).",
+                                                        imageCaption: "Login page"
+                                                 },
+                                                 mainPage: {
+                                                        content: "Main page allowing the creation of notes and tags, as well as the consultation of notes, filtering and navigation in the different folders or tags.",
+                                                        imageCaption: "Main page"
+                                                 }
+                                          }
+                                   }
                             },
                             bts: {
                                    title: "Higher Technician Certificate Project",
@@ -377,5 +418,4 @@ export const translations = {
                      comingSoon: "Coming soon",
               }
        }
-
 }

@@ -4,6 +4,8 @@ import { translations } from "./../translations";
 import centerDivIMG from './../img/centerDiv.png'
 import ComingSoon from "./../components/comingSoon"
 import BtsProject from '../components/btsProject';
+import PersonnalProjects from '../components/notesProject';
+import { Accordion } from 'flowbite-react';
 
 const Project = (props) => {
        const { language } = props;
@@ -31,7 +33,9 @@ const Project = (props) => {
                      <div className="space-y-8 mb-52">
                             <div id="personal" className="mt-52 space-y-5">
                                    <Title title={translations[language].project.categories.personal.title}></Title>
-                                   <ComingSoon></ComingSoon>
+                                   
+                                          <PersonnalProjects></PersonnalProjects>
+                                   
                             </div>
 
                             <div id="bachelor" className="space-y-5">

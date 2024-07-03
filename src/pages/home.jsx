@@ -11,7 +11,7 @@ const Home = (props) => {
        const { language } = props;
 
        return (
-              <div className='flex flex-col items-center justify-center py-8 sm:py-0'>
+              <div className='flex flex-col items-center justify-center py-8 sm:py-0 my-16 md:my-24 lg:my-32 xl:my-44 2xl:my-56'>
                      <div className='flex flex-col items-center justify-center'>
                             <img
                                    draggable="false"

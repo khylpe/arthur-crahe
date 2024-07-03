@@ -3,7 +3,7 @@ export const translations = {
               home: {
                      title: "Accueil",
                      alternance: "École de l'Air et de l'Espace",
-                     job: "Développeur Web/Logiciel"
+                     job: "Développeur Web full stack"
               },
 
               about: {
@@ -31,7 +31,7 @@ export const translations = {
                                    },
                                    izitek: {
                                           name: "Izitek",
-                                          description: "C'est à Salon-de-Provence, chez Izitek, que j'ai effectué de nombreux stages lors de mes années au lycée Poutrain."
+                                          description: "C'est à Eguilles, chez Izitek, que j'ai effectué de nombreux stages lors de mes années au lycée Poutrain."
                                    },
                                    clickMe: "Cliquez moi !",
                                    more: "Plus d'informations",
@@ -77,7 +77,7 @@ export const translations = {
                                           timeAndPlace: "2023-2024 | CESI École d'Ingénieurs (Aix-En-Provence, 13100)",
                                           diplomaTitle: "Bachelor : Concepteur Développeur d'applications",
                                           description: "Enthousiaste à l'idée de commencer ce nouveau chapitre de ma vie académique, j'intégrerai l'année prochaine le CESI. J'y suivrai une formation en alternance pour obtenir mon Bachelor en tant que Concepteur Développeur d'applications. L'école de l'Air et de l'Espace à Aix-en-Provence sera mon lieu d'alternance, où je pourrai mettre en pratique et approfondir les compétences que j'ai acquises au cours de mes études précédentes. Je suis particulièrement impatient d'apprendre davantage sur le développement d'applications et de continuer à explorer de nouvelles technologies. L'alternance représente pour moi une opportunité unique d'acquérir de l'expérience professionnelle tout en continuant à apprendre. Cette combinaison d'enseignement théorique et de pratique sur le terrain permet d'avoir une vision globale et concrète de l'informatique et du développement d'applications. J'ai hâte de relever les défis qui m'attendent et de contribuer de manière significative à l'équipe de l'École de l'Air et de l'Espace.",
-                                          experience: "Nombre d'expériences professionnelles : 1 (quasi temps plein)"
+                                          experience: "Nombre d'expériences professionnelles : 1 (temps plein)"
                                    }
                             }
                      },
@@ -194,6 +194,97 @@ export const translations = {
                             },
                             bachelor: {
                                    title: "Projets du Bachelor",
+                                   cube: {
+                                          title: "Ressources Relationnelles (Cube)",
+                                          introduction: {
+                                                 content: `Le projet « (RE)Sources Relationnelles » est une initiative du ministère des Solidarités et de la Santé destinée à renforcer les échanges interpersonnels et à promouvoir la cohésion sociale à travers une plateforme nationale polyvalente. Cette application dynamique offre aux citoyens un accès à une diversité de ressources visant à améliorer leur bien-être individuel et collectif. Les utilisateurs peuvent partager et discuter de documents variés, avec une validation rigoureuse garantissant la qualité et la pertinence du contenu. La plateforme propose des fonctionnalités de catégorisation des ressources pour faciliter la navigation, permettant à chaque utilisateur de créer un flux de contenu personnalisé selon ses centres d'intérêt. L'engagement communautaire est encouragé à travers des discussions constructives et un apprentissage collaboratif.`
+                                          },
+
+                                          technicalDetails: {
+                                                 title: "Détails techniques",
+                                                 content: "Sur le plan technologique, la plateforme repose sur une infrastructure robuste et sécurisée, assurant la protection des données confidentielles des utilisateurs. Un corps de modérateurs et d'administrateurs est essentiel pour maintenir l'ordre et la qualité du contenu. Le développement front-end utilise React.js avec Next.js, choisis pour leurs capacités à créer des interfaces riches et interactives. Le back-end est développé avec le framework PHP Laravel, reconnu pour sa robustesse et son élégance. La gestion de la base de données repose sur MariaDB, sélectionnée pour ses performances élevées et sa fiabilité. Toutes les composantes logicielles, y compris le serveur nginx, sont conteneurisées avec Docker, assurant ainsi une flexibilité et une facilité de déploiement optimales. Le processus de développement a été itératif, permettant une collaboration étroite avec le client pour ajuster les orientations du projet au besoin.",
+                                          },
+                                          features: {
+                                                 contentList: [
+                                                        "Explorer toutes les ressources disponibles", // Lister les ressources
+                                                        "Accéder aux ressources exclusives (après autorisation)", // Lister les ressources restreintes
+                                                        "Trouver facilement la ressource idéale (filtres et tris)", // Filtrer et trier les ressources
+                                                        "Consulter en détail une ressource", // Afficher le contenu d'une ressource
+                                                        "Gérer toutes les ressources (interface admin)", // Lister / Filtrer les ressources en Back Office
+                                                        "Créer et modifier des ressources",  // Ajouter / Editer une ressource
+                                                        "Supprimer/Bloquer une ressource (interface admin)", // Supprimer / Suspendre une ressource
+                                                        "Organiser les ressources par catégories", // Ajouter / Editer une catégorie de ressources
+                                                        "Supprimer une catégorie de ressources (interface admin)",
+                                                        "Créer un compte pour participer", // Création d'un compte citoyen
+                                                        "Gérer les comptes utilisateurs (activation/désactivation/ban/création/modification) (interface admin)", // Désactivation / Réactivation d'un compte citoyen
+                                                        "Créer des comptes modérateurs/administrateurs (interface admin)", // Création d'un compte modérateur / administrateur / super-administrateur
+                                                        "Proposer une ressource à la communauté", // Création / Edition d'une ressource
+                                                        "Valider les ressources proposées par les utilisateurs (interface admin)", // Validation d'une ressource pour publication
+                                                        "Commenter et échanger sur les ressources", // Ajout d'un commentaire sur une ressource
+                                                        "Modérer les commentaires pour garantir un espace respectueux (interface admin)", // Modération des commentaires
+                                                        "Répondre aux commentaires",
+                                                        "Sauvegarder vos ressources préférées", // Ajouter / Retirer une ressource de ses favoris
+                                                        "Mettre de côté une ressource pour plus tard", // Mettre de côté une ressource / Annuler
+                                                        "Suivre les statistiques d'utilisation de la plateforme", // Afficher le tableau de bord statistiques (consultation, recherche, exploitations, créations)
+                                                        "Analyser les statistiques en détail (filtres avancés) (interface admin)" // Filtrer les statistiques (périodes, catégories, types de relations, de ressources, zones géographiques, etc.)
+                                                 ],
+                                          },
+                                          presentation: {
+                                                 title: "Présentation de (RE)Sources wRelationnelles",
+                                                 aResource: {
+                                                        content: "Page de détail d'une ressource: Consultez toutes les informations sur une ressource, y compris sa description, ses catégories, ses commentaires et les discussions associées.",
+                                                        imageCaption: "Capture d'écran de la page de détail d'une ressource avec titre, description, commentaires et bouton de partage."
+                                                 },
+                                                 bookmarks: {
+                                                        content: "Gestion des 'A regarder plus tard': Retrouvez facilement vos ressources sauvegardées pour y accéder rapidement plus tard.",
+                                                        imageCaption: "Capture d'écran de la page des favoris avec une liste de ressources sauvegardées."
+                                                 },
+                                                 categories: {
+                                                        content: "Exploration par catégories: Découvrez les ressources classées par catégories pour trouver rapidement celles qui correspondent à vos centres d'intérêt.",
+                                                        imageCaption: "Capture d'écran de la page des catégories avec une liste de catégories et un moteur de recherche."
+                                                 },
+                                                 createResource: {
+                                                        content: "Création de ressources: Partagez vos connaissances et expériences en créant vos propres ressources et en les soumettant à la communauté.",
+                                                        imageCaption: "Capture d'écran du formulaire de création de ressource avec des champs pour le titre, la description, les catégories et le contenu."
+                                                 },
+                                                 dashboard: {
+                                                        content: "Tableau de bord (administrateur): Accédez à un aperçu de l'état de la plateforme.",
+                                                        imageCaption: "Capture d'écran du tableau de bord administrateur avec des widgets pour les differentes options de modération."
+                                                 },
+                                                 gestionUtilisateurs: {
+                                                        content: "Gestion des utilisateurs (administrateurs): Gérez les comptes utilisateurs, attribuez des rôles et modérez les contenus pour assurer la qualité de la plateforme.",
+                                                        imageCaption: "Capture d'écran de l'interface d'administration des utilisateurs avec une liste d'utilisateurs, leurs rôles et des options d'édition."
+                                                 },
+                                                 mesFavoris: {
+                                                        content: "Vos favoris: Retrouvez toutes les ressources que vous avez ajoutées à vos favoris pour les consulter ultérieurement.",
+                                                        imageCaption: "Capture d'écran de la page des favoris avec une liste de ressources sauvegardées et des options de suppression."
+                                                 },
+                                                 mesRessources: {
+                                                        content: "Vos ressources: Accédez à toutes les ressources que vous avez créées et suivez leur statut de validation.",
+                                                        imageCaption: "Capture d'écran de la page des ressources créées par l'utilisateur avec leur titre, leur statut de validation et des options d'édition."
+                                                 },
+                                                 modifyCategory: {
+                                                        content: "Modification de catégories (administrateurs): Gérez les catégories de ressources pour faciliter la navigation et l'organisation des contenus.",
+                                                        imageCaption: "Capture d'écran de l'interface d'administration des catégories avec une liste de catégories et des options d'édition et de suppression."
+                                                 },
+                                                 pendingComments: {
+                                                        content: "Commentaires en attente de modération (administrateurs): Modérez les commentaires avant leur publication pour garantir un espace d'échange respectueux.",
+                                                        imageCaption: "Capture d'écran de la liste des commentaires en attente de modération avec des options d'approbation ou de rejet."
+                                                 },
+                                                 pendingRessources: {
+                                                        content: "Ressources en attente de validation (administrateurs): Validez les ressources soumises par les utilisateurs avant leur publication pour assurer la qualité des contenus.",
+                                                        imageCaption: "Capture d'écran de la liste des ressources en attente de validation avec des options d'approbation ou de rejet."
+                                                 },
+                                                 statsCategories: {
+                                                        content: "Statistiques par catégories (administrateurs): Analysez le nombre de ressources par catégorie de ressources pour mieux comprendre les intérêts des utilisateurs.",
+                                                        imageCaption: "Capture d'écran d'un graphique présentant les statistiques d'utilisation des différentes catégories de ressources."
+                                                 },
+                                                 statsRessources: {
+                                                        content: "Statistiques sur les ressources (administrateurs): Suivez les performances de chaque ressource en termes de vues.",
+                                                        imageCaption: "Capture d'écran d'un tableau présentant les statistiques d'utilisation de chaque ressource (nombre de vues)."
+                                                 }
+                                          }
+                                   },
                             },
                      },
 
@@ -214,7 +305,7 @@ export const translations = {
               home: {
                      title: "Home",
                      alternance: "Air and Space School",
-                     job: "Web/Software Developer"
+                     job: "Full-stack web developer"
               },
               about: {
                      map: {
@@ -241,7 +332,7 @@ export const translations = {
                                    },
                                    izitek: {
                                           name: "Izitek",
-                                          description: "It's in Salon-de-Provence, at Izitek, where I completed numerous internships during my years at Poutrain High School."
+                                          description: "It's in Eguilles, at Izitek, where I completed numerous internships during my years at Poutrain High School."
                                    },
                                    clickMe: "Click me !",
                                    more: "More information",
@@ -294,7 +385,7 @@ export const translations = {
                                           timeAndPlace: "2023-2024 (not started yet) | CESI Engineering School (Aix-En-Provence, 13100)",
                                           diplomaTitle: "Bachelor's Degree : App developer & designer",
                                           description: "Enthusiastic about starting this new chapter of my academic life, I will join CESI next year. There, I will pursue an apprenticeship-based program to earn my Bachelor's degree as an Application Developer. The Air and Space School in Salon-de-Provence will be my place of apprenticeship, where I can put into practice and deepen the skills I have acquired throughout my previous studies. I am particularly eager to learn more about application development and to continue exploring new technologies. The apprenticeship represents a unique opportunity for me to gain professional experience while continuing to learn. This combination of theoretical teaching and field practice allows for a comprehensive and concrete understanding of computer science and application development. I am eager to take on the challenges that await me and to make a significant contribution to the team at the Air and Space School.",
-                                          experience: "Number of professional experiences: 1 (almost full time)",
+                                          experience: "Number of professional experiences: 1 (full time)",
                                    }
                             }
                      },
@@ -385,6 +476,97 @@ export const translations = {
                             },
                             bachelor: {
                                    title: "Bachelor's degree projects",
+                                   cube: {
+                                          title: "Relational Resources (Cube)",
+                                          introduction: {
+                                                 content: `The "(RE)Sources Relationnelles" project is an initiative by the Ministry of Solidarity and Health aimed at enhancing interpersonal exchanges and promoting social cohesion through a versatile national platform. This dynamic application provides citizens with access to a variety of resources to improve both individual and collective well-being. Users can share and discuss various documents, with rigorous validation ensuring content quality and relevance. The platform includes features for categorizing resources to facilitate navigation, allowing each user to create a personalized content stream based on their interests. Community engagement is fostered through constructive discussions and collaborative learning.`
+                                          },
+                                          technicalDetails: {
+                                                 title: "Technical Description of the Platform",
+                                                 content: "Technologically, the platform relies on a robust and secure infrastructure to protect users' confidential data. The presence of moderators and administrators is crucial for maintaining order and content quality. Front-end development utilizes React.js with Next.js, chosen for their ability to create rich and interactive interfaces. The back-end is developed using the PHP Laravel framework, known for its robustness and elegance. MariaDB manages the database, selected for its high performance and reliability. All software components, including the nginx server, are containerized with Docker, ensuring flexibility and ease of deployment. The development process has been iterative, allowing close collaboration with the client to adjust project directions as needed.",
+                                          },
+                                          features: {
+                                                 contentList: [
+                                                        "Explore all available resources", // Lister les ressources
+                                                        "Access exclusive resources (after authorization)", // Lister les ressources restreintes
+                                                        "Easily find the ideal resource (filters and sorting)", // Filtrer et trier les ressources
+                                                        "View a resource in detail", // Afficher le contenu d'une ressource
+                                                        "Manage all resources (admin interface)", // Lister / Filtrer les ressources en Back Office
+                                                        "Create and modify resources", // Ajouter / Editer une ressource
+                                                        "Delete/Block a resource (admin interface)", // Supprimer / Suspendre une ressource
+                                                        "Organize resources by categories", // Ajouter / Editer une catégorie de ressources
+                                                        "Delete a resource category (admin interface)",
+                                                        "Create an account to participate", // Création d'un compte citoyen
+                                                        "Manage user accounts (activate/deactivate/ban/create/modify) (admin interface)", // Désactivation / Réactivation d'un compte citoyen
+                                                        "Create moderator/administrator accounts (admin interface)", // Création d'un compte modérateur / administrateur / super-administrateur
+                                                        "Suggest a resource to the community", // Création / Edition d'une ressource
+                                                        "Validate resources submitted by users (admin interface)", // Validation d'une ressource pour publication
+                                                        "Comment and discuss resources", // Ajout d'un commentaire sur une ressource
+                                                        "Moderate comments to ensure a respectful space (admin interface)", // Modération des commentaires
+                                                        "Reply to comments",
+                                                        "Save your favorite resources", // Ajouter / Retirer une ressource de ses favoris
+                                                        "Set aside a resource for later", // Mettre de côté une ressource / Annuler
+                                                        "Track platform usage statistics", // Afficher le tableau de bord statistiques (consultation, recherche, exploitations, créations)
+                                                        "Analyze statistics in detail (advanced filters) (admin interface)" // Filtrer les statistiques (périodes, catégories, types de relations, de ressources, zones géographiques, etc.)
+                                                 ],
+                                          },
+                                          presentation: {
+                                                 title: "Presentation of (RE)Sources Relationnelles",
+                                                 aResource: {
+                                                        content: "Resource detail page: View all information about a resource, including its description, categories, comments, and associated discussions.",
+                                                        imageCaption: "Screenshot of the resource detail page with title, description, comments, and share button."
+                                                 },
+                                                 bookmarks: {
+                                                        content: "Managing 'Watch Later': Easily find your saved resources for quick access later.",
+                                                        imageCaption: "Screenshot of the bookmarks page with a list of saved resources."
+                                                 },
+                                                 categories: {
+                                                        content: "Exploring by categories: Discover resources sorted by categories to quickly find those that match your interests.",
+                                                        imageCaption: "Screenshot of the categories page with a list of categories and a search engine."
+                                                 },
+                                                 createResource: {
+                                                        content: "Creating resources: Share your knowledge and experiences by creating your own resources and submitting them to the community.",
+                                                        imageCaption: "Screenshot of the resource creation form with fields for title, description, categories, and content."
+                                                 },
+                                                 dashboard: {
+                                                        content: "Dashboard (admin): Access an overview of the platform's status.",
+                                                        imageCaption: "Screenshot of the admin dashboard with widgets for various moderation options."
+                                                 },
+                                                 gestionUtilisateurs: {
+                                                        content: "User management (admin): Manage user accounts, assign roles, and moderate content to ensure the platform's quality.",
+                                                        imageCaption: "Screenshot of the user management interface with a list of users, their roles, and editing options."
+                                                 },
+                                                 mesFavoris: {
+                                                        content: "Your favorites: Find all the resources you have added to your favorites for later review.",
+                                                        imageCaption: "Screenshot of the favorites page with a list of saved resources and deletion options."
+                                                 },
+                                                 mesRessources: {
+                                                        content: "Your resources: Access all the resources you have created and track their validation status.",
+                                                        imageCaption: "Screenshot of the user's created resources page with their title, validation status, and editing options."
+                                                 },
+                                                 modifyCategory: {
+                                                        content: "Category modification (admin): Manage resource categories to facilitate navigation and content organization.",
+                                                        imageCaption: "Screenshot of the category management interface with a list of categories and editing and deletion options."
+                                                 },
+                                                 pendingComments: {
+                                                        content: "Comments pending moderation (admin): Moderate comments before publication to ensure a respectful exchange space.",
+                                                        imageCaption: "Screenshot of the list of comments pending moderation with approval or rejection options."
+                                                 },
+                                                 pendingRessources: {
+                                                        content: "Resources pending validation (admin): Validate user-submitted resources before publication to ensure content quality.",
+                                                        imageCaption: "Screenshot of the list of resources pending validation with approval or rejection options."
+                                                 },
+                                                 statsCategories: {
+                                                        content: "Statistics by categories (admin): Analyze the number of resources by category to better understand user interests.",
+                                                        imageCaption: "Screenshot of a chart presenting usage statistics for different resource categories."
+                                                 },
+                                                 statsRessources: {
+                                                        content: "Resource statistics (admin): Track the performance of each resource in terms of views.",
+                                                        imageCaption: "Screenshot of a table presenting usage statistics for each resource (number of views)."
+                                                 }
+                                          }
+
+                                   }
                             },
                      }
 

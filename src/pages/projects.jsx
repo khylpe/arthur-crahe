@@ -2,10 +2,9 @@ import Title from './../components/title';
 import { withLanguage } from "./../contexts/languageContext";
 import { translations } from "./../translations";
 import centerDivIMG from './../img/centerDiv.png'
-import ComingSoon from "./../components/comingSoon"
 import BtsProject from '../components/btsProject';
 import PersonnalProjects from '../components/notesProject';
-import { Accordion } from 'flowbite-react';
+import BachelorProject from '../components/bachelorProject';
 
 const Project = (props) => {
        const { language } = props;
@@ -30,17 +29,15 @@ const Project = (props) => {
                             <span className='underline decoration-pink-500 underline-offset-4 decoration-2'>{translations[language].project.preview.hover}</span>
                      </div>
 
-                     <div className="space-y-8 mb-52">
+                     <div className="space-y-16 mb-52">
                             <div id="personal" className="mt-52 space-y-5">
                                    <Title title={translations[language].project.categories.personal.title}></Title>
-                                   
                                           <PersonnalProjects></PersonnalProjects>
-                                   
                             </div>
 
                             <div id="bachelor" className="space-y-5">
                                    <Title title={translations[language].project.categories.bachelor.title}></Title>
-                                   <ComingSoon></ComingSoon>
+                                   <BachelorProject></BachelorProject>
                             </div>
 
                             <div id="BTS" className="space-y-5">

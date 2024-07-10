@@ -202,7 +202,7 @@ export const translations = {
 
                                           technicalDetails: {
                                                  title: "Détails techniques",
-                                                 content: "Sur le plan technologique, la plateforme repose sur une infrastructure robuste et sécurisée, assurant la protection des données confidentielles des utilisateurs. Un corps de modérateurs et d'administrateurs est essentiel pour maintenir l'ordre et la qualité du contenu. Le développement front-end utilise React.js avec Next.js, choisis pour leurs capacités à créer des interfaces riches et interactives. Le back-end est développé avec le framework PHP Laravel, reconnu pour sa robustesse et son élégance. La gestion de la base de données repose sur MariaDB, sélectionnée pour ses performances élevées et sa fiabilité. Toutes les composantes logicielles, y compris le serveur nginx, sont conteneurisées avec Docker, assurant ainsi une flexibilité et une facilité de déploiement optimales. Le processus de développement a été itératif, permettant une collaboration étroite avec le client pour ajuster les orientations du projet au besoin.",
+                                                 content: "Sur le plan technologique, la plateforme repose sur une architecture robuste et sécurisée, assurant la protection des données confidentielles des utilisateurs. La structure de ce projet suit le modèle MVC, permettant une séparation claire des responsabilités, facilitant ainsi la répartition du travail et la maintenance. La Vue est gérée par Next.js, choisi pour ses capacités à créer des interfaces riches et interactives et s'occupant de l'interaction avec l'utilisateur. Le développement front-end utilise également React.js pour enrichir l'expérience utilisateur. Le Contrôleur et le Modèle sont implémentés avec Laravel, un framework PHP reconnu pour sa robustesse et son élégance. Le contrôleur coordonne les requêtes entrantes, délègue le traitement aux modèles, et retourne les réponses appropriées aux vues. Le modèle manipule les données de l'application et interagit avec la base de données. La gestion de la base de données repose sur MariaDB, sélectionnée pour ses performances élevées et sa fiabilité, utilisée pour stocker et récupérer toutes les données nécessaires à l'application. Toutes les composantes logicielles, y compris le serveur nginx, sont conteneurisées avec Docker, assurant ainsi une flexibilité et une facilité de déploiement optimales. Le processus de développement a été itératif, permettant une collaboration étroite avec le client pour ajuster les orientations du projet au besoin.",
                                           },
                                           features: {
                                                  contentList: [
@@ -282,6 +282,10 @@ export const translations = {
                                                  statsRessources: {
                                                         content: "Statistiques sur les ressources (administrateurs): Suivez les performances de chaque ressource en termes de vues.",
                                                         imageCaption: "Capture d'écran d'un tableau présentant les statistiques d'utilisation de chaque ressource (nombre de vues)."
+                                                 },
+                                                 architecture: {
+                                                        content: "Architecture de la plateforme: Découvrez comment les différentes composantes de la plateforme interagissent pour offrir une expérience utilisateur complète et sécurisée.",
+                                                        imageCaption: "Schéma de l'architecture de la plateforme (Vue d'ensemble)"
                                                  }
                                           }
                                    },
@@ -483,7 +487,7 @@ export const translations = {
                                           },
                                           technicalDetails: {
                                                  title: "Technical Description of the Platform",
-                                                 content: "Technologically, the platform relies on a robust and secure infrastructure to protect users' confidential data. The presence of moderators and administrators is crucial for maintaining order and content quality. Front-end development utilizes React.js with Next.js, chosen for their ability to create rich and interactive interfaces. The back-end is developed using the PHP Laravel framework, known for its robustness and elegance. MariaDB manages the database, selected for its high performance and reliability. All software components, including the nginx server, are containerized with Docker, ensuring flexibility and ease of deployment. The development process has been iterative, allowing close collaboration with the client to adjust project directions as needed.",
+                                                 content: "From a technological standpoint, the platform is built on a robust and secure architecture, ensuring the protection of users' confidential data. The structure of this project follows the MVC pattern, allowing for a clear separation of responsibilities, thus facilitating task distribution and maintenance. The View is managed by Next.js, chosen for its capabilities to create rich and interactive interfaces, handling user interactions. The front-end development also uses React.js to enhance the user experience. The Controller and Model are implemented with Laravel, a PHP framework known for its robustness and elegance. The controller coordinates incoming requests, delegates processing to the models, and returns appropriate responses to the views. The model handles the application's data and interacts with the database. The database management relies on MariaDB, selected for its high performance and reliability, used to store and retrieve all necessary application data. All software components, including the nginx server, are containerized with Docker, ensuring optimal flexibility and ease of deployment. The development process was iterative, allowing for close collaboration with the client to adjust project directions as needed.",
                                           },
                                           features: {
                                                  contentList: [
@@ -563,6 +567,10 @@ export const translations = {
                                                  statsRessources: {
                                                         content: "Resource statistics (admin): Track the performance of each resource in terms of views.",
                                                         imageCaption: "Screenshot of a table presenting usage statistics for each resource (number of views)."
+                                                 },
+                                                 architecture: {
+                                                        content: "Platform architecture: Discover how the different components of the platform interact to offer a complete and secure user experience.",
+                                                        imageCaption: "Schematic representation of the general architecture of the (RE)Sources Relationnelles project"
                                                  }
                                           }
 

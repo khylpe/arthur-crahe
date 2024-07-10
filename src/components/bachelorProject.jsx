@@ -5,9 +5,8 @@ import { XMarkIcon } from '@heroicons/react/24/outline'
 
 import { withLanguage } from "../contexts/languageContext";
 import { translations } from '../translations';
-
 import { MdOutlinePushPin } from "react-icons/md";
-import { FaGithub, FaFilePdf, } from "react-icons/fa";
+import { FaGithub, } from "react-icons/fa";
 import { TbWorld } from "react-icons/tb";
 
 // Logo images for tech stack
@@ -20,12 +19,13 @@ import antdLogo from './../img/projects/bachelor/cube/antdLogo.png'
 import dockerLogo from './../img/projects/bachelor/cube/dockerLogo.png'
 import cypressLogo from './../img/projects/bachelor/cube/cypressLogo.png'
 import phpunitLogo from './../img/projects/bachelor/cube/phpunitLogo.svg'
-import swaggerLogo from './../img/projects/bachelor/cube/phpunitLogo.svg'
-import tailwindcssLogo from './../img/projects/bachelor/cube/phpunitLogo.svg'
+import swaggerLogo from './../img/projects/bachelor/cube/swaggerLogo.png'
+import tailwindcssLogo from './../img/projects/bachelor/cube/tailwindcssLogo.webp'
 import chartjsLogo from './../img/projects/bachelor/cube/chartjsLogo.png'
 import axiosLogo from './../img/projects/bachelor/cube/axiosLogo.png'
 import cloudflareLogo from './../img/projects/bachelor/cube/cloudflareLogo.png'
 import nginxLogo from './../img/projects/bachelor/cube/nginxLogo.svg'
+import sentryLogo from './../img/projects/bachelor/cube/sentryLogo.png'
 // Images for Cube project in the Bachelor
 import aRessource from './../img/projects/bachelor/cube/aRessource.png'
 import bookmarks from './../img/projects/bachelor/cube/bookmarks.png';
@@ -40,8 +40,7 @@ import pendingComments from './../img/projects/bachelor/cube/pendingComments.png
 import pendingRessources from './../img/projects/bachelor/cube/pendingRessources.png';
 import statsCategories from './../img/projects/bachelor/cube/statsCategories.png';
 import statsRessources from './../img/projects/bachelor/cube/statsRessources.png';
-
-import overviewProjectIMG from './../img/projects/bts/overviewProject.png'
+import archi from './../img/projects/bachelor/cube/archi.png'
 
 const BachelorProject = (props) => {
        const { language } = props;
@@ -280,24 +279,60 @@ const BachelorProject = (props) => {
                                           {/* Tech stack */}
                                           <div className='space-y-5'>
                                                  <h1 className='text-4xl'>Tech stack</h1>
-                                                 <div className="space-y-3 sm:space-x-5 sm:space-y-0 sm:flex grid grid-cols-2 justify-items-center sm:flex-wrap sm:flex-row mt-5 justify-around px-3">
+                                                 <div className="space-y-3 gap-5 sm:space-y-0 sm:flex grid grid-cols-2 justify-items-center sm:flex-wrap sm:flex-row mt-5 justify-around px-3">
                                                         <Tooltip content="React">
                                                                <img draggable="false" className='h-16 object-contain' src={reactLogo} alt="react logo" />
                                                         </Tooltip>
-                                                        <img draggable="false" className='h-16 object-contain' src={nextjsLogo} alt="nextjs logo" />
-                                                        <img draggable="false" className='h-16 object-contain' src={typescriptLogo} alt="typescript logo" />
-                                                        <img draggable="false" className='h-16 object-contain' src={axiosLogo} alt="axios logo" />
-                                                        <img draggable="false" className='h-16 object-contain' src={tailwindcssLogo} alt="tailwindcss logo" />
-                                                        <img draggable="false" className='h-16 object-contain' src={antdLogo} alt="antd logo" />
-                                                        <img draggable="false" className='h-16 object-contain' src={chartjsLogo} alt="chartjs logo" />
-                                                        <img draggable="false" className='h-16 object-contain' src={cypressLogo} alt="cypress logo" />
-                                                        <img draggable="false" className='h-16 object-contain' src={laravelLogo} alt="laravel logo" />
-                                                        <img draggable="false" className='h-16 object-contain' src={phpunitLogo} alt="phpunit logo" />
-                                                        <img draggable="false" className='h-16 object-contain' src={mariadbLogo} alt="mariadb logo" />
-                                                        <img draggable="false" className='h-16 object-contain' src={dockerLogo} alt="docker logo" />
-                                                        <img draggable="false" className='h-16 object-contain' src={swaggerLogo} alt="swagger logo" />
-                                                        <img draggable="false" className='h-16 object-contain' src={nginxLogo} alt="swagger logo" />
-                                                        <img draggable="false" className='h-16 object-contain' src={cloudflareLogo} alt="swagger logo" />
+                                                        <Tooltip content="NextJS">
+                                                               <img draggable="false" className='h-16 object-contain' src={nextjsLogo} alt="nextjs logo" />
+                                                        </Tooltip>
+
+
+                                                        <Tooltip content="TypeScript">
+                                                               <img draggable="false" className='h-16 object-contain' src={typescriptLogo} alt="typescript logo" />
+                                                        </Tooltip>
+                                                        <Tooltip content="Axios">
+                                                               <img draggable="false" className='h-16 object-contain' src={axiosLogo} alt="axios logo" />
+                                                        </Tooltip>
+                                                        <Tooltip content="Tailwindcss">
+                                                               <img draggable="false" className='h-16 object-contain' src={tailwindcssLogo} alt="tailwindcss logo" />
+                                                        </Tooltip>
+                                                        <Tooltip content="Ant Design">
+                                                               <img draggable="false" className='h-16 object-contain' src={antdLogo} alt="antd logo" />
+                                                        </Tooltip>
+                                                        <Tooltip content="ChartJS">
+                                                               <img draggable="false" className='h-16 object-contain' src={chartjsLogo} alt="chartjs logo" />
+                                                        </Tooltip>
+                                                        <Tooltip content="Cypress">
+                                                               <img draggable="false" className='h-16 object-contain' src={cypressLogo} alt="cypress logo" />
+                                                        </Tooltip>
+                                                        <Tooltip content="Laravel">
+                                                               <img draggable="false" className='h-16 object-contain' src={laravelLogo} alt="laravel logo" />
+                                                        </Tooltip>
+                                                        <Tooltip content="PhpUnit">
+                                                               <img draggable="false" className='h-16 object-contain' src={phpunitLogo} alt="phpunit logo" />
+                                                        </Tooltip>
+                                                        <Tooltip content="MariaDB">
+                                                               <img draggable="false" className='h-16 object-contain' src={mariadbLogo} alt="mariadb logo" />
+                                                        </Tooltip>
+                                                        <Tooltip content="Docker">
+                                                               <img draggable="false" className='h-16 object-contain' src={dockerLogo} alt="docker logo" />
+                                                        </Tooltip>
+                                                        <Tooltip content="Swagger">
+                                                               <img draggable="false" className='h-16 object-contain' src={swaggerLogo} alt="swagger logo" />
+                                                        </Tooltip>
+                                                        <Tooltip content="Sentry.io">
+                                                               <img draggable="false" className='h-16 object-contain' src={sentryLogo} alt="sentry logo" />
+                                                        </Tooltip>
+                                                        <Tooltip content="Nginx">
+                                                               <img draggable="false" className='h-16 object-contain' src={nginxLogo} alt="nginx logo" />
+                                                        </Tooltip>
+                                                        <Tooltip content="Cloudflare">
+                                                               <img draggable="false" className='h-16 object-contain' src={cloudflareLogo} alt="cloudflare logo" />
+                                                        </Tooltip>
+
+
+
                                                  </div>
                                           </div>
 
@@ -314,6 +349,14 @@ const BachelorProject = (props) => {
                                                                {translations[language].project.categories.bachelor.cube.technicalDetails.content}
                                                         </p>
                                                  </div>
+
+                                                 <p className='p-3'>
+                                                        {translations[language].project.categories.bachelor.cube.presentation.architecture.content}
+                                                 </p>
+                                                 <figure className="flex flex-col justify-center">
+                                                        <img onClick={() => openModal(archi)} draggable="false" className="cursor-pointer h-96 object-contain" src={archi} alt={translations[language].project.categories.bachelor.cube.presentation.architecture.imageCaption} />
+                                                        <figcaption className="text-center mt-2 text-lg text-gray-500 italic">{translations[language].project.categories.bachelor.cube.presentation.architecture.imageCaption}</figcaption>
+                                                 </figure>
                                           </div>
 
                                    </Accordion.Content>
